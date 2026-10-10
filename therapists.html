@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Therapists — SereneSpa</title>
+  <meta name="description" content="Meet the six licensed SereneSpa specialists, filter by specialty, read what to expect from your therapist and book your session in seconds." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("serenespa_theme");
+        if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === "dark") document.documentElement.classList.add("dark");
+        if (localStorage.getItem("serenespa_direction") === "rtl") document.documentElement.dir = "rtl";
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 dark:bg-forest-900 text-forest-800 dark:text-sage-100 antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <main>
+    <section class="hero-gradient pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="max-w-3xl reveal">
+          <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-xs text-sage-500 dark:text-sage-400">
+            <a href="index.html" class="inline-flex items-center gap-1.5 transition-colors hover:text-gold-600 dark:hover:text-gold-300"><i data-lucide="home" class="w-3.5 h-3.5"></i>Home</a>
+            <span aria-hidden="true">/</span>
+            <span class="font-medium text-forest-700 dark:text-cream-100">Therapists</span>
+          </nav>
+          <p class="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="users-round" class="w-4 h-4"></i>Our therapists</p>
+          <h1 class="mt-3 font-display text-4xl sm:text-6xl font-semibold leading-[1.05] text-forest-700 dark:text-cream-100 text-balance">Meet the hands behind the calm</h1>
+          <p class="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-sage-600 dark:text-sage-300">
+            Six licensed specialists with an average of nine years on the treatment floor. Filter by specialty, read their strengths and book the hands that fit your week.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#therapists" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-7 py-3.5 text-sm font-medium shadow-soft transition-colors">
+              <i data-lucide="users-round" class="w-4 h-4"></i>Meet the team
+            </a>
+            <a href="dashboard.html?view=book" class="inline-flex items-center gap-2 rounded-full border border-sage-300 dark:border-sage-600 px-7 py-3.5 text-sm font-medium text-forest-700 dark:text-sage-100 hover:bg-white dark:hover:bg-forest-800 transition-colors">
+              Book a session<i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative mt-10 sm:mt-12 reveal">
+          <div class="relative rounded-[2.5rem] overflow-hidden shadow-lift border border-white/60 dark:border-sage-700/60">
+            <img src="https://images.pexels.com/photos/18120174/pexels-photo-18120174.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Women receiving therapeutic massages in a serene spa setting" class="w-full h-[260px] sm:h-[400px] object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/25 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-8">
+              <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p class="font-display text-2xl sm:text-3xl font-semibold text-cream-50">Six specialists, one shared standard</p>
+                  <p class="mt-1 text-sm text-sage-200">Licensed, insured and reviewed after every session</p>
+                </div>
+                <span class="rounded-full bg-white/15 px-4 py-2 text-xs font-medium text-cream-50 backdrop-blur-sm">4.9 average guest rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-white dark:bg-forest-800/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="grid gap-6 sm:grid-cols-3">
+          <div class="reveal flex items-center gap-4 rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-5 shadow-card">
+            <span class="grid place-items-center w-12 h-12 shrink-0 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="briefcase" class="w-6 h-6"></i></span>
+            <div>
+              <p class="font-display text-3xl font-semibold text-forest-700 dark:text-gold-300">9 yrs</p>
+              <p class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">Average experience</p>
+            </div>
+          </div>
+          <div class="reveal flex items-center gap-4 rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-5 shadow-card">
+            <span class="grid place-items-center w-12 h-12 shrink-0 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="users-round" class="w-6 h-6"></i></span>
+            <div>
+              <p class="font-display text-3xl font-semibold text-forest-700 dark:text-gold-300">6</p>
+              <p class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">Licensed specialists</p>
+            </div>
+          </div>
+          <div class="reveal flex items-center gap-4 rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-5 shadow-card">
+            <span class="grid place-items-center w-12 h-12 shrink-0 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="star" class="w-6 h-6 fill-gold-500 text-gold-500"></i></span>
+            <div>
+              <p class="font-display text-3xl font-semibold text-forest-700 dark:text-gold-300">4.9</p>
+              <p class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">Average guest rating</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="therapists" class="py-16 sm:py-24 scroll-mt-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="max-w-2xl reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="sparkles" class="w-4 h-4"></i>The team</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Find the right hands</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300">Every profile shows experience, days on the floor and signature techniques. Tap a specialty chip to narrow the team, then book straight from the card.</p>
+        </div>
+
+        <p class="mt-8 text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Filter by specialty</p>
+        <div id="therapist-filters" class="mt-3 flex flex-wrap gap-2.5"></div>
+
+        <div id="therapist-grid" class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+
+        <div id="therapist-empty" class="hidden mt-8 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-10 text-center shadow-card">
+          <span class="mx-auto grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="search" class="w-6 h-6"></i></span>
+          <p class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">No therapists in this specialty yet</p>
+          <p class="mt-1.5 text-sm text-sage-600 dark:text-sage-300">Pick another chip, or browse the full team again.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-beige-100 dark:bg-forest-800/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="max-w-2xl reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="clipboard-list" class="w-4 h-4"></i>What to expect</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">What to expect from your therapist</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300">However you book, the shape of the session stays consistent across the whole team.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="clipboard-list" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Consultation first</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Two minutes of questions at the start, so your therapist knows exactly where the tension lives today.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="badge-check" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Licensed &amp; insured</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Every specialist holds a current massage licence, full professional insurance and 40 hours of in-house training.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="sliders-horizontal" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Pressure feedback loop</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Mid-session check-ins let you dial the pressure up or down — nothing is fixed once the table is warm.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="clipboard-check" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Aftercare notes</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">You leave with hydration, stretch and self-massage notes tailored to the work that was done.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-white dark:bg-forest-800/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="max-w-2xl reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="compass" class="w-4 h-4"></i>Guidance</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Not sure who to pick?</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300">Start from how you want to feel — each route leads to the specialist who fits best.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <a href="dashboard.html?view=book" class="reveal group rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover block">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="activity" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Carrying tension?</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Desk knots, tight shoulders or a stubborn lower back — Marcus works firm and focused to release them.</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold-600 dark:text-gold-300">Book with Marcus<i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"></i></span>
+          </a>
+          <a href="dashboard.html?view=book" class="reveal group rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover block">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="moon-star" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Just need to rest?</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">A slow, flowing hour with Elena is the simplest way to switch off — light pressure, long strokes, quiet room.</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold-600 dark:text-gold-300">Book with Elena<i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"></i></span>
+          </a>
+          <a href="dashboard.html?view=book" class="reveal group rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover block">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="sparkles" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Planning a ritual?</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Sophia hosts our couple suites and shared rituals, keeping both guests in sync from welcome tea to final stretch.</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold-600 dark:text-gold-300">Book with Sophia<i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16 sm:pb-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="relative overflow-hidden rounded-[2.5rem] shadow-lift reveal">
+          <img src="https://images.pexels.com/photos/6187293/pexels-photo-6187293.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Masseuse providing a relaxing facial massage in a serene spa setting" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-forest-900/75"></div>
+          <div class="relative px-6 sm:px-12 py-14 sm:py-20 text-center">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-300"><i data-lucide="calendar-heart" class="w-4 h-4"></i>Book your hour</p>
+            <h2 class="mt-4 font-display text-3xl sm:text-5xl font-semibold text-cream-50 text-balance">Book your therapist today</h2>
+            <p class="mt-4 max-w-xl mx-auto text-sage-200">Pick a specialist, choose a live slot and get instant confirmation — your dashboard keeps every session in view.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+              <a href="dashboard.html?view=book" class="inline-flex items-center gap-2 rounded-full bg-gold-500 hover:bg-gold-400 text-forest-900 px-7 py-3.5 text-sm font-semibold shadow-soft transition-colors">
+                <i data-lucide="calendar-check" class="w-4 h-4"></i>Book
+              </a>
+              <a href="treatments.html" class="inline-flex items-center gap-2 rounded-full border border-sage-400/70 text-cream-50 px-7 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
+                View treatments<i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="https://unpkg.com/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/therapists.js"></script>
+</body>
+</html>

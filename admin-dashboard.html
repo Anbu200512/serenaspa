@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — SereneSpa</title>
+  <meta name="description" content="SereneSpa admin dashboard — manage clients, therapists, treatments, appointments, memberships, payments, availability, enquiries and site settings." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("serenespa_theme");
+        if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === "dark") document.documentElement.classList.add("dark");
+        if (localStorage.getItem("serenespa_direction") === "rtl") document.documentElement.dir = "rtl";
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 dark:bg-forest-900 text-forest-800 dark:text-sage-100 antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <div class="mx-auto max-w-[1500px] px-3 sm:px-6 pt-24 sm:pt-28 pb-16">
+    <div class="flex gap-6 items-start">
+
+      <aside id="dash-sidebar" class="dash-sidebar lg:static">
+        <div class="mb-4 flex items-center gap-3 rounded-2xl border border-sage-100 dark:border-sage-700/60 bg-sage-50 dark:bg-forest-800/70 p-3">
+          <span id="dash-avatar" class="grid place-items-center w-11 h-11 shrink-0 rounded-full bg-forest-700 dark:bg-gold-500 text-cream-50 dark:text-forest-900 font-display text-lg font-semibold">SS</span>
+          <div class="min-w-0">
+            <p id="dash-username" class="truncate text-sm font-semibold text-forest-700 dark:text-cream-100">Admin</p>
+            <span id="dash-plan" class="mt-0.5 inline-flex items-center rounded-full bg-white dark:bg-forest-900 px-2 py-0.5 text-[11px] font-medium text-sage-600 dark:text-sage-300">Administrator</span>
+          </div>
+        </div>
+
+        <p class="px-3.5 pb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-sage-500 dark:text-sage-400">Menu</p>
+
+        <nav class="space-y-1">
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="overview"><i data-lucide="layout-dashboard" class="w-4 h-4"></i><span>Overview</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="clients"><i data-lucide="users" class="w-4 h-4"></i><span>Clients</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="therapists"><i data-lucide="user-round-check" class="w-4 h-4"></i><span>Therapists</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="treatments"><i data-lucide="sparkles" class="w-4 h-4"></i><span>Treatments</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="appointments"><i data-lucide="calendar-check" class="w-4 h-4"></i><span>Appointments</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="memberships"><i data-lucide="gem" class="w-4 h-4"></i><span>Memberships</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="payments"><i data-lucide="credit-card" class="w-4 h-4"></i><span>Payments</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="availability"><i data-lucide="calendar-clock" class="w-4 h-4"></i><span>Availability</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="enquiries"><i data-lucide="mail" class="w-4 h-4"></i><span>Enquiries</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+          <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="settings"><i data-lucide="settings" class="w-4 h-4"></i><span>Settings</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
+        </nav>
+
+        <div class="my-3 h-px bg-sage-200 dark:bg-sage-700"></div>
+
+        <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors" data-view="logout"><i data-lucide="log-out" class="w-4 h-4"></i><span>Logout</span></button>
+      </aside>
+
+      <div class="flex-1 min-w-0">
+
+        <div class="mb-5 sm:mb-6 flex flex-wrap items-center gap-3">
+          <button type="button" id="sidebar-open" aria-label="Open menu" aria-expanded="false" class="lg:hidden grid place-items-center w-10 h-10 shrink-0 rounded-xl border border-sage-200 dark:border-sage-700 bg-white dark:bg-forest-800 text-sage-600 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <div class="min-w-0">
+            <p id="dash-greeting" class="font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Admin panel</p>
+            <p id="dash-date" class="text-xs sm:text-sm text-sage-500 dark:text-sage-400"></p>
+          </div>
+          <div class="ms-auto flex items-center gap-2">
+            <button type="button" data-action="pay-record" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-4 sm:px-5 py-2.5 text-sm font-medium shadow-soft transition-colors">
+              <i data-lucide="circle-dollar-sign" class="w-4 h-4"></i><span class="hidden sm:inline">Record payment</span><span class="sm:hidden">Record</span>
+            </button>
+          </div>
+        </div>
+
+        <section id="view-overview" data-view="overview" class="dash-view">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Admin dashboard</p>
+            <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Overview</h1>
+          </div>
+          <div id="ov-body" class="mt-5 space-y-5"></div>
+        </section>
+
+        <section id="view-clients" data-view="clients" class="dash-view hidden">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Your guests</p>
+              <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Clients</h1>
+            </div>
+            <div class="relative w-full sm:w-72">
+              <i data-lucide="search" class="w-4 h-4 absolute top-1/2 -translate-y-1/2 start-3.5 text-sage-400"></i>
+              <input id="cli-search" type="search" placeholder="Search name or email..." class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 ps-10 pe-4 py-2.5 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+            </div>
+          </div>
+
+          <div id="cli-table-wrap" class="mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3 sm:p-4 shadow-card">
+            <table class="responsive-table w-full text-sm">
+              <thead>
+                <tr class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">
+                  <th class="px-3 py-2 text-start">Name</th>
+                  <th class="px-3 py-2 text-start">Email</th>
+                  <th class="px-3 py-2 text-start">Mobile</th>
+                  <th class="px-3 py-2 text-start">Plan</th>
+                  <th class="px-3 py-2 text-start">Appointments</th>
+                  <th class="px-3 py-2 text-start">Joined</th>
+                  <th class="px-3 py-2 text-end">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="cli-rows"></tbody>
+            </table>
+          </div>
+
+          <div id="cli-empty" class="hidden mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-8 text-center shadow-card">
+            <span class="mx-auto grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="users" class="w-6 h-6"></i></span>
+            <h2 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">No clients found</h2>
+            <p class="mt-1 text-sm text-sage-600 dark:text-sage-300">Try a different search or clear the box above.</p>
+          </div>
+        </section>
+
+        <section id="view-therapists" data-view="therapists" class="dash-view hidden">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Your team</p>
+              <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Therapists</h1>
+            </div>
+            <button type="button" data-action="ther-add" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-5 py-2.5 text-sm font-medium transition-colors">
+              <i data-lucide="user-plus" class="w-4 h-4"></i>Add therapist
+            </button>
+          </div>
+
+          <div id="ther-grid" class="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-3"></div>
+
+          <div id="ther-empty" class="hidden mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-8 text-center shadow-card">
+            <span class="mx-auto grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="user-round-x" class="w-6 h-6"></i></span>
+            <h2 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">No therapists yet</h2>
+            <p class="mt-1 text-sm text-sage-600 dark:text-sage-300">Add your first therapist to open the booking calendar.</p>
+          </div>
+        </section>
+
+        <section id="view-treatments" data-view="treatments" class="dash-view hidden">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Service menu</p>
+              <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Treatments</h1>
+            </div>
+            <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+              <div class="relative w-full sm:w-64">
+                <i data-lucide="search" class="w-4 h-4 absolute top-1/2 -translate-y-1/2 start-3.5 text-sage-400"></i>
+                <input id="tr-search" type="search" placeholder="Search treatments..." class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 ps-10 pe-4 py-2.5 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+              </div>
+              <button type="button" data-action="treat-add" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-5 py-2.5 text-sm font-medium transition-colors">
+                <i data-lucide="plus" class="w-4 h-4"></i>Add treatment
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-4 rounded-2xl border border-sage-100 dark:border-sage-700/60 bg-sage-50 dark:bg-forest-800/60 p-3.5 flex items-start gap-3">
+            <span class="grid place-items-center w-9 h-9 shrink-0 rounded-xl bg-white dark:bg-forest-900 text-forest-700 dark:text-gold-300"><i data-lucide="info" class="w-4 h-4"></i></span>
+            <p class="text-xs leading-relaxed text-sage-600 dark:text-sage-300">Changes saved here appear immediately on treatments.html and in the client booking flow.</p>
+          </div>
+
+          <div id="tr-table-wrap" class="mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3 sm:p-4 shadow-card">
+            <table class="responsive-table w-full text-sm">
+              <thead>
+                <tr class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">
+                  <th class="px-3 py-2 text-start">Treatment</th>
+                  <th class="px-3 py-2 text-start">Category</th>
+                  <th class="px-3 py-2 text-start">Duration</th>
+                  <th class="px-3 py-2 text-start">Price</th>
+                  <th class="px-3 py-2 text-start">Featured</th>
+                  <th class="px-3 py-2 text-end">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tr-rows"></tbody>
+            </table>
+          </div>
+
+          <div id="tr-empty" class="hidden mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-8 text-center shadow-card">
+            <span class="mx-auto grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="sparkles" class="w-6 h-6"></i></span>
+            <h2 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">No treatments found</h2>
+            <p class="mt-1 text-sm text-sage-600 dark:text-sage-300">Add a treatment or adjust your search.</p>
+          </div>
+        </section>
+
+        <section id="view-appointments" data-view="appointments" class="dash-view hidden">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">The book</p>
+            <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Appointments</h1>
+          </div>
+
+          <div id="appt-filters" class="mt-4 flex flex-wrap gap-2">
+            <button type="button" data-action="appt-filter" data-filter="All" class="appt-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">All</button>
+            <button type="button" data-action="appt-filter" data-filter="Pending" class="appt-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">Pending</button>
+            <button type="button" data-action="appt-filter" data-filter="Confirmed" class="appt-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">Confirmed</button>
+            <button type="button" data-action="appt-filter" data-filter="Completed" class="appt-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">Completed</button>
+            <button type="button" data-action="appt-filter" data-filter="Cancelled" class="appt-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">Cancelled</button>
+          </div>
+
+          <div id="appt-counts" class="mt-4 grid gap-3 grid-cols-2 sm:grid-cols-3 xl:grid-cols-5"></div>
+
+          <div id="appt-table-wrap" class="mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3 sm:p-4 shadow-card overflow-x-auto">
+            <table class="responsive-table w-full text-sm">
+              <thead>
+                <tr class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">
+                  <th class="px-3 py-2 text-start">ID</th>
+                  <th class="px-3 py-2 text-start">Date</th>
+                  <th class="px-3 py-2 text-start">Time</th>
+                  <th class="px-3 py-2 text-start">Client</th>
+                  <th class="px-3 py-2 text-start">Treatment</th>
+                  <th class="px-3 py-2 text-start">Therapist</th>
+                  <th class="px-3 py-2 text-start">Price</th>
+                  <th class="px-3 py-2 text-start">Status</th>
+                  <th class="px-3 py-2 text-end">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="appt-rows"></tbody>
+            </table>
+          </div>
+
+          <div id="appt-empty" class="hidden mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-8 text-center shadow-card">
+            <span class="mx-auto grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="calendar-x" class="w-6 h-6"></i></span>
+            <h2 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Nothing here</h2>
+            <p class="mt-1 text-sm text-sage-600 dark:text-sage-300">No appointments match this filter.</p>
+          </div>
+        </section>
+
+        <section id="view-memberships" data-view="memberships" class="dash-view hidden">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Loyalty plans</p>
+            <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Memberships</h1>
+          </div>
+
+          <div id="mem-plans" class="mt-5 grid gap-5 sm:grid-cols-2 xl:grid-cols-4"></div>
+
+          <div class="mt-8">
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Active members</p>
+            <h2 class="mt-1 font-display text-xl sm:text-2xl font-semibold text-forest-700 dark:text-cream-100">Client memberships</h2>
+
+            <div id="mem-members-wrap" class="mt-4 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3 sm:p-4 shadow-card">
+              <table class="responsive-table w-full text-sm">
+                <thead>
+                  <tr class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">
+                    <th class="px-3 py-2 text-start">Name</th>
+                    <th class="px-3 py-2 text-start">Plan</th>
+                    <th class="px-3 py-2 text-start">Sessions</th>
+                    <th class="px-3 py-2 text-start">Expiry</th>
+                    <th class="px-3 py-2 text-end">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="mem-rows"></tbody>
+              </table>
+            </div>
+
+            <div id="mem-empty" class="hidden mt-4 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-8 text-center shadow-card">
+              <span class="mx-auto grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="gem" class="w-6 h-6"></i></span>
+              <h2 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">No members yet</h2>
+              <p class="mt-1 text-sm text-sage-600 dark:text-sage-300">When a client activates a plan it will show up here.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="view-payments" data-view="payments" class="dash-view hidden">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Billing</p>
+              <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Payments</h1>
+            </div>
+            <button type="button" data-action="pay-record" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-5 py-2.5 text-sm font-medium transition-colors">
+              <i data-lucide="circle-plus" class="w-4 h-4"></i>Record payment
+            </button>
+          </div>
+
+          <div id="pay-summary" class="mt-5 grid gap-4 grid-cols-2 xl:grid-cols-4"></div>
+
+          <div id="pay-filters" class="mt-5 flex flex-wrap gap-2">
+            <button type="button" data-action="pay-filter" data-filter="All" class="pay-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">All</button>
+            <button type="button" data-action="pay-filter" data-filter="Paid" class="pay-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">Paid</button>
+            <button type="button" data-action="pay-filter" data-filter="Pending" class="pay-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">Pending</button>
+            <button type="button" data-action="pay-filter" data-filter="Failed" class="pay-chip rounded-full border px-4 py-2 text-sm font-medium transition-colors">Failed</button>
+          </div>
+
+          <div id="pay-table-wrap" class="mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3 sm:p-4 shadow-card">
+            <table class="responsive-table w-full text-sm">
+              <thead>
+                <tr class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">
+                  <th class="px-3 py-2 text-start">Invoice</th>
+                  <th class="px-3 py-2 text-start">Date</th>
+                  <th class="px-3 py-2 text-start">Client</th>
+                  <th class="px-3 py-2 text-start">Service</th>
+                  <th class="px-3 py-2 text-start">Amount</th>
+                  <th class="px-3 py-2 text-start">Method</th>
+                  <th class="px-3 py-2 text-start">Status</th>
+                  <th class="px-3 py-2 text-end">Receipt</th>
+                </tr>
+              </thead>
+              <tbody id="pay-rows"></tbody>
+            </table>
+          </div>
+
+          <div id="pay-empty" class="hidden mt-5 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-8 text-center shadow-card">
+            <span class="mx-auto grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="receipt" class="w-6 h-6"></i></span>
+            <h2 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">No payments here</h2>
+            <p class="mt-1 text-sm text-sage-600 dark:text-sage-300">Record a payment or change the filter above.</p>
+          </div>
+        </section>
+
+        <section id="view-availability" data-view="availability" class="dash-view hidden">
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Working hours</p>
+              <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Availability</h1>
+            </div>
+            <div id="avail-top"></div>
+          </div>
+
+          <div id="avail-list" class="mt-5 space-y-5"></div>
+        </section>
+
+        <section id="view-enquiries" data-view="enquiries" class="dash-view hidden">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Inbox</p>
+            <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Enquiries</h1>
+          </div>
+
+          <div id="enq-list" class="mt-5 space-y-4"></div>
+        </section>
+
+        <section id="view-settings" data-view="settings" class="dash-view hidden">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Site control</p>
+            <h1 class="mt-1 font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Settings</h1>
+          </div>
+
+          <div class="mt-5 grid gap-5 lg:grid-cols-3">
+            <form id="settings-form" class="lg:col-span-2 rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-5 sm:p-6 shadow-card space-y-4">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="st-spa-name" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Spa name</label>
+                  <input id="st-spa-name" type="text" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+                </div>
+                <div>
+                  <label for="st-tagline" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Tagline</label>
+                  <input id="st-tagline" type="text" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+                </div>
+                <div>
+                  <label for="st-phone" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Phone</label>
+                  <input id="st-phone" type="text" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+                </div>
+                <div>
+                  <label for="st-email" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Email</label>
+                  <input id="st-email" type="email" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+                </div>
+              </div>
+              <div>
+                <label for="st-address" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Address</label>
+                <input id="st-address" type="text" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+              </div>
+              <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="st-hours" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Opening hours</label>
+                  <input id="st-hours" type="text" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+                </div>
+                <div>
+                  <label for="st-currency" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Currency label</label>
+                  <select id="st-currency" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 dark:[color-scheme:dark] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400">
+                    <option value="USD">USD ($)</option>
+                    <option value="EUR">EUR (Euro)</option>
+                    <option value="GBP">GBP (£)</option>
+                    <option value="INR">INR (₹)</option>
+                  </select>
+                </div>
+              </div>
+              <p class="text-xs text-sage-500 dark:text-sage-400">These details feed the site footer and contact blocks on every page.</p>
+              <button type="submit" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-6 py-3 text-sm font-medium transition-colors">
+                <i data-lucide="save" class="w-4 h-4"></i>Save settings
+              </button>
+            </form>
+
+            <div class="space-y-5">
+              <div class="rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-5 shadow-card">
+                <p class="text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Demo data</p>
+                <p class="mt-2 text-sm leading-relaxed text-sage-600 dark:text-sage-300">Restore treatments, therapists, accounts, appointments, payments and enquiries to the original SereneSpa seed set.</p>
+                <button type="button" data-action="reset-demo" class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full border border-red-200 dark:border-red-500/40 px-5 py-3 text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors">
+                  <i data-lucide="rotate-ccw" class="w-4 h-4"></i>Reset demo data
+                </button>
+              </div>
+              <div class="rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-5 shadow-card">
+                <p class="text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Your account</p>
+                <p id="set-admin-email" class="mt-2 text-sm font-medium text-forest-700 dark:text-cream-100"></p>
+                <button type="button" data-view="logout" class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full border border-sage-300 dark:border-sage-600 px-5 py-3 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">
+                  <i data-lucide="log-out" class="w-4 h-4"></i>Logout
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="confirm-modal" class="modal-backdrop hidden">
+    <div class="modal-panel w-full max-w-md rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift p-6" role="dialog" aria-modal="true" aria-labelledby="cm-title">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Please confirm</p>
+          <h3 id="cm-title" class="mt-1 font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">Confirm</h3>
+        </div>
+        <button type="button" data-action="close-modal" aria-label="Close" class="grid place-items-center w-9 h-9 shrink-0 rounded-full border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-white dark:hover:bg-forest-900 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <p id="cm-text" class="mt-4 text-sm leading-relaxed text-sage-600 dark:text-sage-300"></p>
+      <div class="mt-6 flex flex-wrap justify-end gap-3">
+        <button type="button" data-action="close-modal" class="rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">Cancel</button>
+        <button type="button" id="cm-confirm" data-action="confirm-yes" class="inline-flex items-center gap-2 rounded-full bg-red-600 hover:bg-red-500 text-cream-50 dark:bg-red-500 dark:hover:bg-red-400 px-5 py-2.5 text-sm font-medium transition-colors"><i data-lucide="circle-check" class="w-4 h-4"></i><span id="cm-confirm-label">Confirm</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="ther-modal" class="modal-backdrop hidden">
+    <div class="modal-panel w-full max-w-2xl rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift p-6" role="dialog" aria-modal="true" aria-labelledby="thm-title">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Team member</p>
+          <h3 id="thm-title" class="mt-1 font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">Add therapist</h3>
+        </div>
+        <button type="button" data-action="close-modal" aria-label="Close" class="grid place-items-center w-9 h-9 shrink-0 rounded-full border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-white dark:hover:bg-forest-900 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="mt-4 space-y-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="th-name" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Full name</label>
+            <input id="th-name" type="text" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+          </div>
+          <div>
+            <label for="th-specialty" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Specialty</label>
+            <input id="th-specialty" type="text" placeholder="e.g. Deep Tissue & Sports Recovery" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+          </div>
+          <div>
+            <label for="th-experience" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Experience (years)</label>
+            <input id="th-experience" type="number" min="0" max="60" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+          </div>
+          <div>
+            <label for="th-expertise" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Expertise (comma list)</label>
+            <input id="th-expertise" type="text" placeholder="Swedish Massage, Aromatherapy" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+          </div>
+        </div>
+        <div>
+          <p class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-2">Working days</p>
+          <div id="th-days" class="flex flex-wrap gap-2"></div>
+        </div>
+        <div>
+          <label for="th-slots" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Daily slots (comma list)</label>
+          <input id="th-slots" type="text" placeholder="09:00, 10:00, 11:00" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+        </div>
+        <div>
+          <label for="th-bio" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Bio</label>
+          <textarea id="th-bio" rows="3" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400 resize-none"></textarea>
+        </div>
+        <label class="inline-flex items-center gap-2.5 cursor-pointer">
+          <input id="th-active" type="checkbox" class="w-4 h-4 rounded border-sage-300 dark:border-sage-600 text-forest-700 focus:ring-sage-400" />
+          <span class="text-sm text-sage-700 dark:text-sage-200">Active (visible for booking)</span>
+        </label>
+      </div>
+      <div class="mt-6 flex flex-wrap justify-end gap-3">
+        <button type="button" data-action="close-modal" class="rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">Cancel</button>
+        <button type="button" data-action="ther-save" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-5 py-2.5 text-sm font-medium transition-colors"><i data-lucide="save" class="w-4 h-4"></i>Save therapist</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="treat-modal" class="modal-backdrop hidden">
+    <div class="modal-panel w-full max-w-2xl rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift p-6" role="dialog" aria-modal="true" aria-labelledby="trm-title">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Service menu</p>
+          <h3 id="trm-title" class="mt-1 font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">Add treatment</h3>
+        </div>
+        <button type="button" data-action="close-modal" aria-label="Close" class="grid place-items-center w-9 h-9 shrink-0 rounded-full border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-white dark:hover:bg-forest-900 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="mt-4 space-y-4">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="t-name" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Name</label>
+            <input id="t-name" type="text" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+          </div>
+          <div>
+            <label for="t-category" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Category</label>
+            <select id="t-category" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 dark:[color-scheme:dark] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400">
+              <option value="Massage">Massage</option>
+              <option value="Therapy">Therapy</option>
+              <option value="Relaxation">Relaxation</option>
+              <option value="Specialty">Specialty</option>
+            </select>
+          </div>
+          <div>
+            <label for="t-duration" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Duration (minutes)</label>
+            <input id="t-duration" type="number" min="10" max="240" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+          </div>
+          <div>
+            <label for="t-price" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Price</label>
+            <input id="t-price" type="number" min="0" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+          </div>
+        </div>
+        <div>
+          <label for="t-desc" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Description</label>
+          <textarea id="t-desc" rows="3" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400 resize-none"></textarea>
+        </div>
+        <div>
+          <label for="t-benefits" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Benefits (comma list)</label>
+          <input id="t-benefits" type="text" placeholder="Relieves tension, Reduces stress" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+        </div>
+        <div>
+          <label for="t-image" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Image URL</label>
+          <input id="t-image" type="url" placeholder="https://..." class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+        </div>
+        <label class="inline-flex items-center gap-2.5 cursor-pointer">
+          <input id="t-featured" type="checkbox" class="w-4 h-4 rounded border-sage-300 dark:border-sage-600 text-forest-700 focus:ring-sage-400" />
+          <span class="text-sm text-sage-700 dark:text-sage-200">Featured on the home page</span>
+        </label>
+      </div>
+      <div class="mt-6 flex flex-wrap justify-end gap-3">
+        <button type="button" data-action="close-modal" class="rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">Cancel</button>
+        <button type="button" data-action="treat-save" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-5 py-2.5 text-sm font-medium transition-colors"><i data-lucide="save" class="w-4 h-4"></i>Save treatment</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="client-modal" class="modal-backdrop hidden">
+    <div class="modal-panel w-full max-w-2xl rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift p-6" role="dialog" aria-modal="true" aria-labelledby="clm-title">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Client profile</p>
+          <h3 id="clm-title" class="mt-1 font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">Client</h3>
+        </div>
+        <button type="button" data-action="close-modal" aria-label="Close" class="grid place-items-center w-9 h-9 shrink-0 rounded-full border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-white dark:hover:bg-forest-900 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div id="clm-body" class="mt-4 space-y-4"></div>
+      <div class="mt-6 flex flex-wrap justify-end gap-3">
+        <button type="button" data-action="close-modal" class="rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="appt-modal" class="modal-backdrop hidden">
+    <div class="modal-panel w-full max-w-lg rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift p-6" role="dialog" aria-modal="true" aria-labelledby="am-title">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Appointment details</p>
+          <h3 id="am-title" class="mt-1 font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">Details</h3>
+        </div>
+        <button type="button" data-action="close-modal" aria-label="Close" class="grid place-items-center w-9 h-9 shrink-0 rounded-full border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-white dark:hover:bg-forest-900 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <dl id="am-body" class="mt-4 space-y-2.5"></dl>
+      <div class="mt-6 flex flex-wrap justify-end gap-3">
+        <button type="button" data-action="close-modal" class="rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="receipt-modal" class="modal-backdrop hidden">
+    <div class="modal-panel w-full max-w-md rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift p-6" role="dialog" aria-modal="true" aria-labelledby="rc-title">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Receipt</p>
+          <h3 id="rc-title" class="mt-1 font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">SereneSpa</h3>
+        </div>
+        <button type="button" data-action="close-modal" aria-label="Close" class="grid place-items-center w-9 h-9 shrink-0 rounded-full border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-white dark:hover:bg-forest-900 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <dl id="rc-body" class="mt-4 space-y-2.5"></dl>
+      <p class="mt-4 text-center text-xs text-sage-500 dark:text-sage-400">Demo - no real payment</p>
+      <div class="mt-6 flex flex-wrap justify-end gap-3">
+        <button type="button" data-action="close-modal" class="rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="pay-modal" class="modal-backdrop hidden">
+    <div class="modal-panel w-full max-w-md rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift p-6" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Billing</p>
+          <h3 id="pm-title" class="mt-1 font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">Record payment</h3>
+        </div>
+        <button type="button" data-action="close-modal" aria-label="Close" class="grid place-items-center w-9 h-9 shrink-0 rounded-full border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-white dark:hover:bg-forest-900 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="mt-4 space-y-4">
+        <div>
+          <label for="pm-client" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Client</label>
+          <select id="pm-client" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 dark:[color-scheme:dark] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400"></select>
+        </div>
+        <div>
+          <label for="pm-service" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Service</label>
+          <input id="pm-service" type="text" placeholder="e.g. Swedish Massage · 60 min" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="pm-amount" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Amount</label>
+            <input id="pm-amount" type="number" min="0" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400" />
+          </div>
+          <div>
+            <label for="pm-method" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Method</label>
+            <select id="pm-method" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 dark:[color-scheme:dark] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400">
+              <option value="Card">Card</option>
+              <option value="Wallet">Wallet</option>
+              <option value="Cash">Cash</option>
+              <option value="Pay at spa">Pay at spa</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="pm-status" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Status</label>
+          <select id="pm-status" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 dark:[color-scheme:dark] px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400">
+            <option value="Paid">Paid</option>
+            <option value="Pending">Pending</option>
+            <option value="Failed">Failed</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap justify-end gap-3">
+        <button type="button" data-action="close-modal" class="rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">Cancel</button>
+        <button type="button" data-action="pay-save" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-5 py-2.5 text-sm font-medium transition-colors"><i data-lucide="save" class="w-4 h-4"></i>Save payment</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="plan-modal" class="modal-backdrop hidden">
+    <div class="modal-panel w-full max-w-lg rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift p-6" role="dialog" aria-modal="true" aria-labelledby="plm-title">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sage-500 dark:text-sage-400">Plan details</p>
+          <h3 id="plm-title" class="mt-1 font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">Edit plan</h3>
+        </div>
+        <button type="button" data-action="close-modal" aria-label="Close" class="grid place-items-center w-9 h-9 shrink-0 rounded-full border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-white dark:hover:bg-forest-900 transition-colors"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+      <div class="mt-4 space-y-4">
+        <div>
+          <label for="plm-includes" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Includes (comma list)</label>
+          <textarea id="plm-includes" rows="3" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400 resize-none"></textarea>
+        </div>
+        <div>
+          <label for="plm-benefits" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Benefits (comma list)</label>
+          <textarea id="plm-benefits" rows="4" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-400 resize-none"></textarea>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap justify-end gap-3">
+        <button type="button" data-action="close-modal" class="rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">Cancel</button>
+        <button type="button" data-action="plan-lists-save" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-5 py-2.5 text-sm font-medium transition-colors"><i data-lucide="save" class="w-4 h-4"></i>Save details</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dash-backdrop" class="fixed inset-0 z-[65] bg-forest-900/60 hidden lg:hidden"></div>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="https://unpkg.com/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

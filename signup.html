@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account — SereneSpa</title>
+  <meta name="description" content="Create your SereneSpa account in under a minute and start booking massages, therapies and wellness rituals from your dashboard." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("serenespa_theme");
+        if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === "dark") document.documentElement.classList.add("dark");
+        if (localStorage.getItem("serenespa_direction") === "rtl") document.documentElement.dir = "rtl";
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 dark:bg-forest-900 text-forest-800 dark:text-sage-100 antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <main>
+    <section class="hero-gradient pt-28 sm:pt-36 pb-16 sm:pb-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal grid overflow-hidden rounded-[2rem] border border-sage-100 bg-white shadow-lift dark:border-sage-700/60 dark:bg-forest-800 lg:grid-cols-2">
+
+          <div class="flex items-center p-6 sm:p-10 lg:p-12">
+            <div class="mx-auto w-full max-w-md">
+              <span class="inline-flex items-center gap-2 rounded-full border border-gold-400/50 bg-cream-100 px-4 py-1.5 text-xs font-medium text-gold-600 dark:bg-forest-900 dark:text-gold-300">
+                <i data-lucide="sparkles" class="h-3.5 w-3.5"></i>Begin your ritual
+              </span>
+              <h1 class="mt-5 font-display text-3xl font-semibold text-forest-700 text-balance dark:text-cream-100 sm:text-4xl">Create your SereneSpa account</h1>
+              <p class="mt-3 text-sm leading-relaxed text-sage-600 dark:text-sage-300">One minute to sign up — then book treatments, track sessions and keep every receipt in one calm place.</p>
+
+              <form id="signup-form" class="mt-7 space-y-4">
+                <div>
+                  <label for="su-name" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Full name</label>
+                  <input id="su-name" name="name" type="text" required autocomplete="name" placeholder="e.g. Aisha Kapoor" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-forest-800 placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400 dark:border-sage-600 dark:bg-forest-900 dark:text-sage-100" />
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label for="su-email" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Email</label>
+                    <input id="su-email" name="email" type="email" required autocomplete="email" placeholder="you@example.com" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-forest-800 placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400 dark:border-sage-600 dark:bg-forest-900 dark:text-sage-100" />
+                  </div>
+                  <div>
+                    <label for="su-mobile" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Mobile</label>
+                    <input id="su-mobile" name="mobile" type="tel" required autocomplete="tel" inputmode="numeric" placeholder="10-digit number" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-forest-800 placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400 dark:border-sage-600 dark:bg-forest-900 dark:text-sage-100" />
+                    <p class="mt-1 text-xs text-sage-500 dark:text-sage-400">Exactly 10 digits — a +91 prefix is welcome.</p>
+                  </div>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <label for="su-password" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Password</label>
+                    <div class="relative">
+                      <input id="su-password" name="password" type="password" required autocomplete="new-password" placeholder="At least 6 characters" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 pe-12 text-sm text-forest-800 placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400 dark:border-sage-600 dark:bg-forest-900 dark:text-sage-100" />
+                      <button type="button" id="su-pw-toggle" aria-label="Show password" class="absolute inset-y-0 end-0 flex items-center pe-3.5 text-sage-500 transition-colors hover:text-forest-700 dark:hover:text-gold-300">
+                        <i data-lucide="eye" class="h-5 w-5"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <label for="su-confirm" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Confirm password</label>
+                    <input id="su-confirm" name="confirm" type="password" required autocomplete="new-password" placeholder="Retype your password" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-forest-800 placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400 dark:border-sage-600 dark:bg-forest-900 dark:text-sage-100" />
+                  </div>
+                </div>
+
+                <label for="su-terms" class="flex cursor-pointer items-start gap-2.5">
+                  <input id="su-terms" type="checkbox" class="mt-0.5 h-4 w-4 shrink-0 rounded border border-sage-300 accent-forest-700 focus:ring-sage-400" />
+                  <span class="text-xs leading-relaxed text-sage-600 dark:text-sage-300">I agree to the SereneSpa demo terms of service and privacy policy — no real data ever leaves this browser.</span>
+                </label>
+
+                <p id="signup-error" role="alert" class="hidden text-sm font-medium text-red-600 dark:text-red-400"></p>
+
+                <button type="submit" id="su-submit" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-forest-700 px-6 py-3.5 text-sm font-medium text-cream-50 shadow-soft transition-colors hover:bg-forest-600 dark:bg-gold-500 dark:text-forest-900 dark:hover:bg-gold-400">
+                  <i data-lucide="user-plus" class="h-4 w-4"></i>Create account
+                </button>
+
+                <div class="flex items-center gap-3 pt-1">
+                  <span class="h-px flex-1 bg-sage-200 dark:bg-sage-700"></span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Already with us?</span>
+                  <span class="h-px flex-1 bg-sage-200 dark:bg-sage-700"></span>
+                </div>
+
+                <a href="login.html" class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-sage-300 px-6 py-3 text-sm font-medium text-forest-700 transition-colors hover:bg-sage-50 dark:border-sage-600 dark:text-sage-100 dark:hover:bg-forest-900">
+                  Sign in instead<i data-lucide="arrow-right" class="h-4 w-4"></i>
+                </a>
+              </form>
+            </div>
+          </div>
+
+          <div class="relative hidden h-48 overflow-hidden bg-forest-900 sm:block sm:h-64 lg:h-auto">
+            <img src="https://images.pexels.com/photos/6629608/pexels-photo-6629608.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Close-up of a relaxing back massage with spa oil" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/45 to-forest-900/10"></div>
+            <blockquote class="absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:p-9">
+              <p class="font-display text-lg italic leading-snug text-cream-50 sm:text-2xl lg:text-3xl">The best time to book was this morning. The next best time is now.</p>
+              <cite class="mt-2 block text-xs not-italic text-sage-300 sm:text-sm">Your first session awaits</cite>
+            </blockquote>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="https://unpkg.com/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

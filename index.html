@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SereneSpa — Relax. Restore. Rejuvenate. | Spa & Massage Therapy</title>
+  <meta name="description" content="SereneSpa is a premium spa and massage therapy center offering Swedish, deep tissue, aromatherapy, hot stone and reflexology treatments with expert therapists." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("serenespa_theme");
+        if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === "dark") document.documentElement.classList.add("dark");
+        if (localStorage.getItem("serenespa_direction") === "rtl") document.documentElement.dir = "rtl";
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 dark:bg-forest-900 text-forest-800 dark:text-sage-100 antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <main>
+    
+    <section class="hero-gradient pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="grid items-center gap-10 lg:grid-cols-2">
+          <div class="reveal">
+            <span class="inline-flex items-center gap-2 rounded-full border border-gold-400/50 bg-white/70 dark:bg-forest-800/70 px-4 py-1.5 text-xs font-medium text-gold-600 dark:text-gold-300">
+              <i data-lucide="flower-2" class="w-3.5 h-3.5"></i>Now welcoming new wellness members
+            </span>
+            <h1 class="mt-5 font-display text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] text-forest-700 dark:text-cream-100 text-balance">
+              A quiet hour that <span class="italic text-gold-600 dark:text-gold-300">changes</span> your whole week
+            </h1>
+            <p class="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-sage-600 dark:text-sage-300">
+              SereneSpa pairs licensed therapists with time-honoured techniques — Swedish, deep tissue, hot stone and aromatherapy — in a calm, light-filled sanctuary built for slow exhales.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a href="dashboard.html?view=book" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-7 py-3.5 text-sm font-medium shadow-soft transition-colors">
+                <i data-lucide="calendar-check" class="w-4 h-4"></i>Book Appointment
+              </a>
+              <a href="treatments.html" class="inline-flex items-center gap-2 rounded-full border border-sage-300 dark:border-sage-600 px-7 py-3.5 text-sm font-medium text-forest-700 dark:text-sage-100 hover:bg-white dark:hover:bg-forest-800 transition-colors">
+                Explore Treatments<i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <dl class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-lg">
+              <div><dt class="font-display text-3xl font-semibold text-forest-700 dark:text-gold-300">12+</dt><dd class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">Years of calm</dd></div>
+              <div><dt class="font-display text-3xl font-semibold text-forest-700 dark:text-gold-300">8</dt><dd class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">Treatments</dd></div>
+              <div><dt class="font-display text-3xl font-semibold text-forest-700 dark:text-gold-300">6</dt><dd class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">Therapists</dd></div>
+              <div><dt class="font-display text-3xl font-semibold text-forest-700 dark:text-gold-300">4.9</dt><dd class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">Guest rating</dd></div>
+            </dl>
+          </div>
+
+          <div class="relative reveal">
+            <div class="relative rounded-[2.5rem] overflow-hidden shadow-lift border border-white/60 dark:border-sage-700/60">
+              <img src="https://images.pexels.com/photos/3865792/pexels-photo-3865792.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Therapist giving a relaxing back massage in a serene spa setting" class="w-full h-[340px] sm:h-[480px] object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-forest-900/45 via-transparent to-transparent"></div>
+            </div>
+            <div class="absolute -bottom-5 start-2 sm:start-6 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift px-4 py-3 flex items-center gap-3 max-w-[15rem]">
+              <span class="grid place-items-center w-10 h-10 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="star" class="w-5 h-5 fill-gold-500 text-gold-500"></i></span>
+              <div>
+                <p class="text-sm font-semibold text-forest-700 dark:text-cream-100">4.9 of 5</p>
+                <p class="text-xs text-sage-500 dark:text-sage-400">2,400+ guest reviews</p>
+              </div>
+            </div>
+            <div class="absolute -top-4 end-2 sm:end-6 rounded-2xl bg-forest-700 dark:bg-gold-500 text-cream-50 dark:text-forest-900 shadow-lift px-4 py-3 flex items-center gap-3">
+              <i data-lucide="clock-3" class="w-5 h-5"></i>
+              <div>
+                <p class="text-sm font-semibold">Open daily</p>
+                <p class="text-xs opacity-80">09:00 — 20:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-white dark:bg-forest-800/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="sparkles" class="w-4 h-4"></i>Signature therapies</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Rituals our guests return for</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300">Three house favourites, each refined over a decade of hands-on practice.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <article class="reveal group relative rounded-3xl overflow-hidden shadow-card">
+            <img src="https://images.pexels.com/photos/9146378/pexels-photo-9146378.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Relaxing massage in a modern spa room" loading="lazy" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/25 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <h3 class="font-display text-2xl font-semibold text-cream-50">The Serene Ritual</h3>
+              <p class="mt-1.5 text-sm text-sage-200">90 minutes of slow Swedish strokes, warm oil and a scalp finish.</p>
+              <a href="treatments.html" class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-gold-300 hover:text-gold-400">Discover<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+          <article class="reveal group relative rounded-3xl overflow-hidden shadow-card">
+            <img src="https://images.pexels.com/photos/6628649/pexels-photo-6628649.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Full body massage in a serene indoor spa environment" loading="lazy" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/25 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <h3 class="font-display text-2xl font-semibold text-cream-50">Deep Release</h3>
+              <p class="mt-1.5 text-sm text-sage-200">Firm, focused pressure that unwinds desk-bound shoulders and backs.</p>
+              <a href="treatments.html" class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-gold-300 hover:text-gold-400">Discover<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+          <article class="reveal group relative rounded-3xl overflow-hidden shadow-card">
+            <img src="https://images.pexels.com/photos/6187418/pexels-photo-6187418.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Massage therapist performing a relaxing treatment in a calming spa" loading="lazy" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/85 via-forest-900/25 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-6">
+              <h3 class="font-display text-2xl font-semibold text-cream-50">Botanical Calm</h3>
+              <p class="mt-1.5 text-sm text-sage-200">Aromatherapy blending with lavender, eucalyptus or ylang-ylang.</p>
+              <a href="treatments.html" class="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-gold-300 hover:text-gold-400">Discover<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 grid items-center gap-10 lg:grid-cols-2">
+        <div class="relative reveal">
+          <div class="rounded-[2rem] overflow-hidden shadow-soft border border-sage-100 dark:border-sage-700/60">
+            <img src="https://images.pexels.com/photos/7235064/pexels-photo-7235064.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Woman receiving a back massage in a spa" loading="lazy" class="w-full h-[380px] object-cover" />
+          </div>
+          <div class="absolute -bottom-6 end-4 sm:end-8 w-40 sm:w-48 rounded-2xl overflow-hidden shadow-lift border-4 border-cream-50 dark:border-forest-900 hidden sm:block">
+            <img src="https://images.pexels.com/photos/11137699/pexels-photo-11137699.jpeg?auto=compress&cs=tinysrgb&w=500" alt="Scented candles glowing in a spa" loading="lazy" class="w-full h-32 object-cover" />
+          </div>
+        </div>
+
+        <div class="reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="hand-heart" class="w-4 h-4"></i>Massage therapy</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100 text-balance">More than muscle — a reset for the nervous system</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300 leading-relaxed">
+            Every SereneSpa session begins with a two-minute consultation, so your therapist can adapt pressure to how your body feels today. From there, methodical strokes encourage circulation, ease adhesions and signal the body to switch out of stress mode.
+          </p>
+          <ul class="mt-6 grid sm:grid-cols-2 gap-3">
+            <li class="flex items-start gap-2.5 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3.5 shadow-card"><i data-lucide="circle-check" class="w-5 h-5 shrink-0 text-sage-500"></i><span class="text-sm text-sage-600 dark:text-sage-300">Licensed, insured therapists</span></li>
+            <li class="flex items-start gap-2.5 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3.5 shadow-card"><i data-lucide="circle-check" class="w-5 h-5 shrink-0 text-sage-500"></i><span class="text-sm text-sage-600 dark:text-sage-300">Pressure tailored each visit</span></li>
+            <li class="flex items-start gap-2.5 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3.5 shadow-card"><i data-lucide="circle-check" class="w-5 h-5 shrink-0 text-sage-500"></i><span class="text-sm text-sage-600 dark:text-sage-300">Linens changed every session</span></li>
+            <li class="flex items-start gap-2.5 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-3.5 shadow-card"><i data-lucide="circle-check" class="w-5 h-5 shrink-0 text-sage-500"></i><span class="text-sm text-sage-600 dark:text-sage-300">Warm towel & tea finish</span></li>
+          </ul>
+          <a href="treatments.html" class="mt-7 inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-6 py-3 text-sm font-medium transition-colors">
+            See all treatments<i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-beige-100 dark:bg-forest-800/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 grid items-center gap-10 lg:grid-cols-2">
+        <div class="reveal order-2 lg:order-1">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="droplets" class="w-4 h-4"></i>Aromatherapy</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100 text-balance">Botanical oils, blended by how you want to feel</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300 leading-relaxed">
+            Our aromatherapy menu starts with your mood, not the clock. Choose calming lavender for restless nights, bright eucalyptus for clarity, or grounding ylang-ylang when the week has taken too much.
+          </p>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center gap-4 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-4 shadow-card">
+              <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="moon-star" class="w-5 h-5"></i></span>
+              <div><p class="text-sm font-semibold text-forest-700 dark:text-cream-100">Lavender — Rest</p><p class="text-xs text-sage-500 dark:text-sage-400">Quiets a racing mind before sleep</p></div>
+            </div>
+            <div class="flex items-center gap-4 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-4 shadow-card">
+              <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="wind" class="w-5 h-5"></i></span>
+              <div><p class="text-sm font-semibold text-forest-700 dark:text-cream-100">Eucalyptus — Clarity</p><p class="text-xs text-sage-500 dark:text-sage-400">Opens the breath and clears the head</p></div>
+            </div>
+            <div class="flex items-center gap-4 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-4 shadow-card">
+              <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="flower" class="w-5 h-5"></i></span>
+              <div><p class="text-sm font-semibold text-forest-700 dark:text-cream-100">Ylang-Ylang — Balance</p><p class="text-xs text-sage-500 dark:text-sage-400">Softens tension held in the shoulders</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative reveal order-1 lg:order-2">
+          <div class="rounded-[2rem] overflow-hidden shadow-soft border border-sage-100 dark:border-sage-700/60">
+            <img src="https://images.pexels.com/photos/6694177/pexels-photo-6694177.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Aromatherapy setup with essential oil bottles and dried herbs" loading="lazy" class="w-full h-[400px] object-cover" />
+          </div>
+          <div class="absolute -bottom-5 start-4 rounded-2xl bg-forest-700 text-cream-50 shadow-lift px-5 py-4">
+            <p class="font-display text-2xl font-semibold">100%</p>
+            <p class="text-xs text-sage-300">plant-derived carrier oils</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="py-16 sm:py-24 bg-white dark:bg-forest-800/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="flex flex-wrap items-end justify-between gap-4 reveal">
+          <div class="max-w-xl">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="star" class="w-4 h-4"></i>Featured treatments</p>
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Book a favourite, or try something new</h2>
+          </div>
+          <a href="treatments.html" class="inline-flex items-center gap-2 rounded-full border border-sage-300 dark:border-sage-600 px-5 py-2.5 text-sm font-medium text-forest-700 dark:text-sage-100 hover:bg-sage-50 dark:hover:bg-forest-800 transition-colors">
+            View full menu<i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div id="featured-grid" class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="badge-check" class="w-4 h-4"></i>Why SereneSpa</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Details that separate a treatment from a ritual</h2>
+        </div>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="award" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Certified therapists</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Every therapist holds a recognised massage license and completes 40 hours of in-house training.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="leaf" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Clean, natural products</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Cold-pressed carrier oils, biodegradable linens and fragrance free options for sensitive skin.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="calendar-clock" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Slots that suit you</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Live availability, evening hours and weekend mornings — reschedule free up to 12 hours before.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="gem" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Membership that pays back</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Monthly sessions, member pricing and guest passes that make sharing the calm easy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-forest-700 dark:bg-forest-800/70 text-cream-50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="flex flex-wrap items-end justify-between gap-4 reveal">
+          <div class="max-w-xl">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-300"><i data-lucide="users-round" class="w-4 h-4"></i>Our therapists</p>
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold">Hands you can trust</h2>
+            <p class="mt-3 text-sage-300">Six specialists, each with a signature strength — pick yours and book directly.</p>
+          </div>
+          <a href="therapists.html" class="inline-flex items-center gap-2 rounded-full border border-sage-500 px-5 py-2.5 text-sm font-medium text-cream-50 hover:bg-forest-600 transition-colors">
+            Meet the team<i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div id="therapist-preview-grid" class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 grid items-center gap-10 lg:grid-cols-2">
+        <div class="reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="gem" class="w-4 h-4"></i>Membership</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100 text-balance">Calm, delivered every month</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300 leading-relaxed">
+            Members reserve priority slots, keep their therapist on file and track remaining sessions straight from the client dashboard. Cancel or change plans any time.
+          </p>
+          <div class="mt-7 grid gap-4 sm:grid-cols-3" id="membership-preview"></div>
+          <a href="membership.html" class="mt-6 inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-6 py-3 text-sm font-medium transition-colors">
+            Compare all plans<i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <div class="relative reveal">
+          <div class="rounded-[2rem] overflow-hidden shadow-soft border border-sage-100 dark:border-sage-700/60">
+            <img src="https://images.pexels.com/photos/3921395/pexels-photo-3921395.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Woman relaxing in a towel after a spa treatment" loading="lazy" class="w-full h-[420px] object-cover" />
+          </div>
+          <div class="absolute top-6 end-4 sm:end-8 rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700 shadow-lift px-5 py-4 w-52">
+            <p class="text-xs uppercase tracking-wider text-sage-500 dark:text-sage-400">Sessions used</p>
+            <div class="mt-2 h-2 rounded-full bg-sage-100 dark:bg-sage-700 overflow-hidden"><div class="h-full w-2/3 rounded-full bg-gold-500"></div></div>
+            <p class="mt-2 text-sm font-semibold text-forest-700 dark:text-cream-100">4 of 6 used · 2 left</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-beige-100 dark:bg-forest-800/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="footprints" class="w-4 h-4"></i>The experience</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Four unhurried steps</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300">From the moment you arrive, everything is paced to let your shoulders drop.</p>
+        </div>
+
+        <div class="relative mt-12 reveal">
+          <div class="rounded-[2rem] overflow-hidden shadow-soft border border-sage-100 dark:border-sage-700/60">
+            <img src="https://images.pexels.com/photos/6628520/pexels-photo-6628520.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Tranquil massage room setup with natural light" loading="lazy" class="w-full h-56 sm:h-72 object-cover" />
+          </div>
+        </div>
+
+        <ol class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <li class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+            <span class="font-display text-4xl font-semibold text-gold-500/70">01</span>
+            <h3 class="mt-2 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Arrive & unwind</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Change into a robe, sip herbal tea and let the city fade in our quiet lounge.</p>
+          </li>
+          <li class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+            <span class="font-display text-4xl font-semibold text-gold-500/70">02</span>
+            <h3 class="mt-2 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Consultation</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Your therapist maps tension areas and agrees the right pressure before starting.</p>
+          </li>
+          <li class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+            <span class="font-display text-4xl font-semibold text-gold-500/70">03</span>
+            <h3 class="mt-2 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Treatment</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Warm towels, slow hands and a room tuned to candlelight and soft sound.</p>
+          </li>
+          <li class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+            <span class="font-display text-4xl font-semibold text-gold-500/70">04</span>
+            <h3 class="mt-2 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Aftercare</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Hydration advice, a stretch plan and your next slot held at member rates.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 bg-white dark:bg-forest-800/60">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="message-circle-heart" class="w-4 h-4"></i>Guest voices</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Words from the lounge</h2>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-3">
+          <figure class="reveal rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+            <div class="flex items-center gap-1 text-gold-500"><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i></div>
+            <blockquote class="mt-4 text-sm leading-relaxed text-sage-600 dark:text-sage-300">"I booked a deep tissue after months of shoulder pain. Marcus found knots I did not know I had — and the follow-up stretch notes actually helped."</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-full bg-sage-200 dark:bg-sage-700 font-display text-lg font-semibold text-forest-700 dark:text-cream-100">HN</span>
+              <div><p class="text-sm font-semibold text-forest-700 dark:text-cream-100">Hannah Norbert</p><p class="text-xs text-sage-500 dark:text-sage-400">Product designer</p></div>
+            </figcaption>
+          </figure>
+          <figure class="reveal rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+            <div class="flex items-center gap-1 text-gold-500"><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i></div>
+            <blockquote class="mt-4 text-sm leading-relaxed text-sage-600 dark:text-sage-300">"The Wellness membership pays for itself. Two evenings a month I switch my phone off and disappear into the aromatherapy room for an hour."</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-full bg-sage-200 dark:bg-sage-700 font-display text-lg font-semibold text-forest-700 dark:text-cream-100">RK</span>
+              <div><p class="text-sm font-semibold text-forest-700 dark:text-cream-100">Ravi Krishnan</p><p class="text-xs text-sage-500 dark:text-sage-400">Member since 2024</p></div>
+            </figcaption>
+          </figure>
+          <figure class="reveal rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+            <div class="flex items-center gap-1 text-gold-500"><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i><i data-lucide="star" class="w-4 h-4 fill-gold-500"></i></div>
+            <blockquote class="mt-4 text-sm leading-relaxed text-sage-600 dark:text-sage-300">"We celebrated an anniversary with the couple suite. Sophia timed both massages perfectly and the tea ritual afterwards was a lovely touch."</blockquote>
+            <figcaption class="mt-5 flex items-center gap-3">
+              <span class="grid place-items-center w-10 h-10 rounded-full bg-sage-200 dark:bg-sage-700 font-display text-lg font-semibold text-forest-700 dark:text-cream-100">MJ</span>
+              <div><p class="text-sm font-semibold text-forest-700 dark:text-cream-100">Marta &amp; Julian</p><p class="text-xs text-sage-500 dark:text-sage-400">Couple suite guests</p></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <div class="text-center reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="circle-help" class="w-4 h-4"></i>Questions</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Before your first visit</h2>
+        </div>
+        <div class="mt-10 space-y-3" id="faq-list">
+          <div class="faq-item rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 shadow-card overflow-hidden">
+            <button type="button" class="faq-q w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-start">
+              <span class="font-medium text-forest-700 dark:text-cream-100">How early should I arrive for my appointment?</span>
+              <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-sage-500"></i>
+            </button>
+            <div class="faq-answer"><p class="px-5 sm:px-6 pb-5 text-sm text-sage-600 dark:text-sage-300">Fifteen minutes is ideal. It gives you time to change, settle in the lounge and complete a short consultation so your treatment starts exactly on time.</p></div>
+          </div>
+          <div class="faq-item rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 shadow-card overflow-hidden">
+            <button type="button" class="faq-q w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-start">
+              <span class="font-medium text-forest-700 dark:text-cream-100">Can I choose my therapist every time?</span>
+              <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-sage-500"></i>
+            </button>
+            <div class="faq-answer"><p class="px-5 sm:px-6 pb-5 text-sm text-sage-600 dark:text-sage-300">Yes. Save your preferred therapist in the client dashboard and they will be pre-selected for every booking. If they are off duty we suggest the closest match.</p></div>
+          </div>
+          <div class="faq-item rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 shadow-card overflow-hidden">
+            <button type="button" class="faq-q w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-start">
+              <span class="font-medium text-forest-700 dark:text-cream-100">How do membership sessions work?</span>
+              <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-sage-500"></i>
+            </button>
+            <div class="faq-answer"><p class="px-5 sm:px-6 pb-5 text-sm text-sage-600 dark:text-sage-300">Each plan refreshes a set number of sessions every 30 days. Your dashboard shows sessions included, used and remaining, plus the exact expiry date and upgrade options.</p></div>
+          </div>
+          <div class="faq-item rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 shadow-card overflow-hidden">
+            <button type="button" class="faq-q w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-start">
+              <span class="font-medium text-forest-700 dark:text-cream-100">What is your cancellation policy?</span>
+              <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-sage-500"></i>
+            </button>
+            <div class="faq-answer"><p class="px-5 sm:px-6 pb-5 text-sm text-sage-600 dark:text-sage-300">Cancel or reschedule free of charge up to 12 hours before your slot. Later cancellations use one membership session or carry a nominal fee for pay-as-you-go guests.</p></div>
+          </div>
+          <div class="faq-item rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 shadow-card overflow-hidden">
+            <button type="button" class="faq-q w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-start">
+              <span class="font-medium text-forest-700 dark:text-cream-100">Is this website a real booking system?</span>
+              <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-sage-500"></i>
+            </button>
+            <div class="faq-answer"><p class="px-5 sm:px-6 pb-5 text-sm text-sage-600 dark:text-sage-300">SereneSpa is a front-end demo. Accounts, bookings and payments are stored locally in your browser — no real charges or messages are ever sent.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16 sm:pb-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="relative overflow-hidden rounded-[2.5rem] shadow-lift reveal">
+          <img src="https://images.pexels.com/photos/6628601/pexels-photo-6628601.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Soothing massage session in a warm spa setting" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-forest-900/75"></div>
+          <div class="relative px-6 sm:px-12 py-14 sm:py-20 text-center">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-300"><i data-lucide="calendar-heart" class="w-4 h-4"></i>Book your hour</p>
+            <h2 class="mt-4 font-display text-3xl sm:text-5xl font-semibold text-cream-50 text-balance">Your body has been asking for this</h2>
+            <p class="mt-4 max-w-xl mx-auto text-sage-200">Pick a treatment, choose your therapist and select a live slot — confirmation is instant.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+              <a href="dashboard.html?view=book" class="inline-flex items-center gap-2 rounded-full bg-gold-500 hover:bg-gold-400 text-forest-900 px-7 py-3.5 text-sm font-semibold shadow-soft transition-colors">
+                <i data-lucide="calendar-check" class="w-4 h-4"></i>Book Appointment
+              </a>
+              <a href="membership.html" class="inline-flex items-center gap-2 rounded-full border border-sage-400/70 text-cream-50 px-7 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
+                View memberships
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 sm:py-24 bg-white dark:bg-forest-800/60 scroll-mt-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="grid gap-10 lg:grid-cols-2">
+          <div class="reveal">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="mail" class="w-4 h-4"></i>Contact</p>
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Questions? We reply within a day</h2>
+            <p class="mt-4 text-sage-600 dark:text-sage-300 max-w-lg">Ask about treatments, group bookings or corporate wellness packages — the front desk reads every message.</p>
+
+            <div class="mt-8 grid sm:grid-cols-2 gap-4">
+              <div class="rounded-2xl border border-sage-100 dark:border-sage-700/60 bg-cream-50 dark:bg-forest-800 p-5 shadow-card">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="map-pin" class="w-5 h-5"></i></span>
+                <p class="mt-3 text-sm font-semibold text-forest-700 dark:text-cream-100">Studio</p>
+                <p class="text-sm text-sage-600 dark:text-sage-300">14 Willow Court, Riverside District</p>
+              </div>
+              <div class="rounded-2xl border border-sage-100 dark:border-sage-700/60 bg-cream-50 dark:bg-forest-800 p-5 shadow-card">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="phone" class="w-5 h-5"></i></span>
+                <p class="mt-3 text-sm font-semibold text-forest-700 dark:text-cream-100">Call</p>
+                <p class="text-sm text-sage-600 dark:text-sage-300">+1 (555) 018-2244</p>
+              </div>
+              <div class="rounded-2xl border border-sage-100 dark:border-sage-700/60 bg-cream-50 dark:bg-forest-800 p-5 shadow-card">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="clock" class="w-5 h-5"></i></span>
+                <p class="mt-3 text-sm font-semibold text-forest-700 dark:text-cream-100">Hours</p>
+                <p class="text-sm text-sage-600 dark:text-sage-300">Mon–Sat 9:00–20:00 · Sun 10:00–18:00</p>
+              </div>
+              <div class="rounded-2xl border border-sage-100 dark:border-sage-700/60 bg-cream-50 dark:bg-forest-800 p-5 shadow-card">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="mail" class="w-5 h-5"></i></span>
+                <p class="mt-3 text-sm font-semibold text-forest-700 dark:text-cream-100">Email</p>
+                <p class="text-sm text-sage-600 dark:text-sage-300">hello@serenespa.com</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="reveal rounded-3xl border border-sage-100 dark:border-sage-700/60 bg-cream-50 dark:bg-forest-800 p-6 sm:p-8 shadow-card space-y-4">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="cf-name" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Name</label>
+                <input id="cf-name" name="name" type="text" required placeholder="Your full name" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+              </div>
+              <div>
+                <label for="cf-email" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Email</label>
+                <input id="cf-email" name="email" type="email" required placeholder="you@example.com" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+              </div>
+            </div>
+            <div>
+              <label for="cf-phone" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Phone (optional)</label>
+              <input id="cf-phone" name="phone" type="tel" placeholder="+1 555 000 0000" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400" />
+            </div>
+            <div>
+              <label for="cf-message" class="block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400 mb-1.5">Message</label>
+              <textarea id="cf-message" name="message" rows="4" required placeholder="Tell us what you are looking for…" class="w-full rounded-xl border border-sage-200 dark:border-sage-600 bg-white dark:bg-forest-900 px-4 py-3 text-sm placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400 resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-6 py-3.5 text-sm font-medium transition-colors">
+              <i data-lucide="send" class="w-4 h-4"></i>Send message
+            </button>
+            <p class="text-xs text-center text-sage-500 dark:text-sage-400">Demo form — your message is saved locally and shown in the admin dashboard.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="https://unpkg.com/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/treatments.js"></script>
+  <script src="js/therapists.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var plans = ssMemberships().slice(0, 3);
+      var wrap = document.getElementById("membership-preview");
+      if (wrap) {
+        wrap.innerHTML = plans.map(function (p) {
+          return '<div class="rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-4 shadow-card text-center">' +
+            '<p class="font-display text-xl font-semibold text-forest-700 dark:text-cream-100">' + ssEscape(p.name) + '</p>' +
+            '<p class="mt-1 font-display text-3xl font-semibold text-gold-600 dark:text-gold-300">' + ssMoney(p.price) + '<span class="text-xs font-sans text-sage-500">/mo</span></p>' +
+            '<p class="mt-1 text-xs text-sage-500 dark:text-sage-400">' + p.sessions + ' sessions · ' + p.discount + '% off extras</p>' +
+            '</div>';
+        }).join("");
+      }
+      ssIcons();
+    });
+  </script>
+</body>
+</html>

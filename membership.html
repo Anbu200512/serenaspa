@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membership Plans — SereneSpa</title>
+  <meta name="description" content="Compare SereneSpa monthly membership plans — Relax, Restore, Wellness and Premium — with included sessions, member pricing, guest passes and dashboard tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("serenespa_theme");
+        if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        if (t === "dark") document.documentElement.classList.add("dark");
+        if (localStorage.getItem("serenespa_direction") === "rtl") document.documentElement.dir = "rtl";
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-cream-50 dark:bg-forest-900 text-forest-800 dark:text-sage-100 antialiased">
+
+  <div id="site-header-mount"></div>
+
+  <main>
+    <section class="hero-gradient pt-28 sm:pt-36 pb-16 sm:pb-24 overflow-hidden">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="max-w-3xl reveal">
+          <nav aria-label="Breadcrumb" class="flex flex-wrap items-center gap-2 text-xs text-sage-500 dark:text-sage-400">
+            <a href="index.html" class="inline-flex items-center gap-1.5 transition-colors hover:text-gold-600 dark:hover:text-gold-300"><i data-lucide="home" class="w-3.5 h-3.5"></i>Home</a>
+            <span aria-hidden="true">/</span>
+            <span class="font-medium text-forest-700 dark:text-cream-100">Membership</span>
+          </nav>
+          <p class="mt-6 inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="gem" class="w-4 h-4"></i>Membership plans</p>
+          <h1 class="mt-3 font-display text-4xl sm:text-6xl font-semibold leading-[1.05] text-forest-700 dark:text-cream-100 text-balance">Wellness, on a rhythm</h1>
+          <p class="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-sage-600 dark:text-sage-300">
+            Monthly sessions at member prices: reserve priority slots, bring a guest and watch every included visit count down in your dashboard. Four plans, one steady habit of calm.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#plans" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-7 py-3.5 text-sm font-medium shadow-soft transition-colors">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>Compare plans
+            </a>
+            <a href="#how" class="inline-flex items-center gap-2 rounded-full border border-sage-300 dark:border-sage-600 px-7 py-3.5 text-sm font-medium text-forest-700 dark:text-sage-100 hover:bg-white dark:hover:bg-forest-800 transition-colors">
+              How sessions work<i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative mt-10 sm:mt-12 reveal">
+          <div class="relative rounded-[2.5rem] overflow-hidden shadow-lift border border-white/60 dark:border-sage-700/60">
+            <img src="https://images.pexels.com/photos/6648542/pexels-photo-6648542.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Two people meditating indoors in a tranquil setting" class="w-full h-[260px] sm:h-[400px] object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-900/80 via-forest-900/25 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-8">
+              <div class="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <p class="font-display text-2xl sm:text-3xl font-semibold text-cream-50">Four plans, one calm habit</p>
+                  <p class="mt-1 text-sm text-sage-200">Every cycle refreshes in full after 30 days</p>
+                </div>
+                <span class="rounded-full bg-white/15 px-4 py-2 text-xs font-medium text-cream-50 backdrop-blur-sm">Members save 5–25% on extras</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans" class="py-16 sm:py-24 scroll-mt-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="flex flex-wrap items-end justify-between gap-4 reveal">
+          <div class="max-w-xl">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="layout-grid" class="w-4 h-4"></i>The plans</p>
+            <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Choose your rhythm</h2>
+            <p class="mt-4 text-sage-600 dark:text-sage-300">Compare inclusions and benefits below, then join in a minute — your plan appears in the dashboard the moment you sign in.</p>
+          </div>
+          <span class="inline-flex items-center gap-2 rounded-full border border-sage-300 dark:border-sage-600 px-4 py-2 text-xs font-medium text-sage-600 dark:text-sage-300"><i data-lucide="shield-check" class="w-4 h-4"></i>No contract · change plans any time</span>
+        </div>
+
+        <div id="plans-grid" class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4"></div>
+      </div>
+    </section>
+
+    <section id="how" class="py-16 sm:py-24 bg-white dark:bg-forest-800/60 scroll-mt-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="max-w-2xl reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="refresh-cw" class="w-4 h-4"></i>How sessions work</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100 text-balance">A cycle you can see and plan</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300">Nothing hides in fine print. Your dashboard mirrors these four steps from the day you join.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-2 lg:items-start">
+          <ol class="grid gap-4 sm:grid-cols-2">
+            <li class="reveal rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+              <div class="flex items-center justify-between gap-3">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="refresh-cw" class="w-5 h-5"></i></span>
+                <span class="font-display text-3xl font-semibold text-gold-500/70">01</span>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Sessions refresh monthly</h3>
+              <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Every 30 days your plan refills its full session count automatically — no renewal forms, no lapses.</p>
+            </li>
+            <li class="reveal rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+              <div class="flex items-center justify-between gap-3">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="gauge" class="w-5 h-5"></i></span>
+                <span class="font-display text-3xl font-semibold text-gold-500/70">02</span>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Track it in the dashboard</h3>
+              <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Sessions included, used and remaining for the live cycle are listed in your client dashboard, updated the moment you book.</p>
+            </li>
+            <li class="reveal rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+              <div class="flex items-center justify-between gap-3">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="calendar-clock" class="w-5 h-5"></i></span>
+                <span class="font-display text-3xl font-semibold text-gold-500/70">03</span>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Watch the expiry date</h3>
+              <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">The exact cycle expiry sits beside your sessions, so you always know how many days are left to book.</p>
+            </li>
+            <li class="reveal rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+              <div class="flex items-center justify-between gap-3">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="trending-up" class="w-5 h-5"></i></span>
+                <span class="font-display text-3xl font-semibold text-gold-500/70">04</span>
+              </div>
+              <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Upgrade any time</h3>
+              <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Move to a bigger plan whenever you like — the new allowance applies immediately with prorated billing for the days remaining.</p>
+            </li>
+          </ol>
+
+          <div class="reveal rounded-3xl bg-cream-50 dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="grid place-items-center w-11 h-11 rounded-xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="gauge" class="w-5 h-5"></i></span>
+                <div>
+                  <p class="text-sm font-semibold text-forest-700 dark:text-cream-100">Wellness plan · current cycle</p>
+                  <p class="text-xs text-sage-500 dark:text-sage-400">Illustrative example of the client dashboard</p>
+                </div>
+              </div>
+              <span class="rounded-full bg-gold-500/15 dark:bg-gold-500/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-gold-600 dark:text-gold-300">Demo widget</span>
+            </div>
+
+            <div class="mt-6 h-2.5 rounded-full bg-sage-100 dark:bg-sage-700 overflow-hidden">
+              <div class="h-full w-2/3 rounded-full bg-gold-500"></div>
+            </div>
+
+            <p class="mt-3 text-sm font-semibold text-forest-700 dark:text-cream-100">4 of 6 sessions used · 2 remaining · Expires in 18 days</p>
+
+            <dl class="mt-5 grid grid-cols-3 gap-3">
+              <div class="rounded-2xl bg-white dark:bg-forest-900 border border-sage-100 dark:border-sage-700/60 px-1.5 py-3 text-center">
+                <dt class="text-[10px] uppercase tracking-wide text-sage-500 dark:text-sage-400">Included</dt>
+                <dd class="font-display text-2xl font-semibold text-forest-700 dark:text-gold-300">6</dd>
+              </div>
+              <div class="rounded-2xl bg-white dark:bg-forest-900 border border-sage-100 dark:border-sage-700/60 px-1.5 py-3 text-center">
+                <dt class="text-[10px] uppercase tracking-wide text-sage-500 dark:text-sage-400">Used</dt>
+                <dd class="font-display text-2xl font-semibold text-forest-700 dark:text-gold-300">4</dd>
+              </div>
+              <div class="rounded-2xl bg-white dark:bg-forest-900 border border-sage-100 dark:border-sage-700/60 px-1.5 py-3 text-center">
+                <dt class="text-[10px] uppercase tracking-wide text-sage-500 dark:text-sage-400">Left</dt>
+                <dd class="font-display text-2xl font-semibold text-forest-700 dark:text-gold-300">2</dd>
+              </div>
+            </dl>
+
+            <div class="mt-4 flex items-start gap-2.5 rounded-2xl bg-white dark:bg-forest-900 border border-sage-100 dark:border-sage-700/60 px-4 py-3">
+              <i data-lucide="calendar-clock" class="w-4 h-4 mt-0.5 shrink-0 text-gold-500"></i>
+              <p class="text-sm text-sage-600 dark:text-sage-300">Book the last two sessions before the cycle ends — unused visits reset every 30 days.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="perks" class="py-16 sm:py-24 bg-beige-100 dark:bg-forest-800/50 scroll-mt-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="badge-check" class="w-4 h-4"></i>Member perks</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Included with every plan</h2>
+          <p class="mt-4 text-sage-600 dark:text-sage-300">However large or small your plan, these come as standard from the day you join.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="calendar-check" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Priority booking</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Reserve prime morning and evening slots ahead of the public booking window.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="ticket" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Guest passes</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Bring a friend each month — passes scale with your plan, up to four on Premium.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="badge-percent" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Member pricing</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">A standing 5–25% discount on every treatment outside your included sessions.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="coffee" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Lounge &amp; tea</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Arrive early for the members' lounge, herbal tea and a quiet corner before your session.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="calendar-clock" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Free reschedule</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">Move any booking at no cost up to 12 hours before your slot, from the dashboard.</p>
+          </div>
+          <div class="reveal rounded-3xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 p-6 shadow-card card-hover">
+            <span class="grid place-items-center w-12 h-12 rounded-2xl bg-sage-100 dark:bg-sage-700 text-forest-700 dark:text-gold-300"><i data-lucide="clipboard-check" class="w-6 h-6"></i></span>
+            <h3 class="mt-4 font-display text-xl font-semibold text-forest-700 dark:text-cream-100">Wellness reviews</h3>
+            <p class="mt-2 text-sm text-sage-600 dark:text-sage-300">A quarterly check-in on sleep, stress and muscle load, with a tailored treatment plan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-16 sm:py-24 scroll-mt-24">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <div class="text-center reveal">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="circle-help" class="w-4 h-4"></i>Membership FAQ</p>
+          <h2 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100">Good to know before you join</h2>
+        </div>
+        <div class="mt-10 space-y-3">
+          <div class="faq-item rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 shadow-card overflow-hidden">
+            <button type="button" class="faq-q w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-start">
+              <span class="font-medium text-forest-700 dark:text-cream-100">Do unused sessions roll over?</span>
+              <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-sage-500"></i>
+            </button>
+            <div class="faq-answer"><p class="px-5 sm:px-6 pb-5 text-sm text-sage-600 dark:text-sage-300">No — each plan resets every 30 days. Any sessions left at the end of a cycle expire, so we suggest booking your visits as soon as the cycle refreshes. Your dashboard shows the countdown the whole time.</p></div>
+          </div>
+          <div class="faq-item rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 shadow-card overflow-hidden">
+            <button type="button" class="faq-q w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-start">
+              <span class="font-medium text-forest-700 dark:text-cream-100">Can I pause my membership?</span>
+              <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-sage-500"></i>
+            </button>
+            <div class="faq-answer"><p class="px-5 sm:px-6 pb-5 text-sm text-sage-600 dark:text-sage-300">Yes — you can freeze your plan for up to 30 days once per year from the client dashboard. Billing pauses while it is frozen and your expiry date moves forward by the same number of days.</p></div>
+          </div>
+          <div class="faq-item rounded-2xl bg-white dark:bg-forest-800 border border-sage-100 dark:border-sage-700/60 shadow-card overflow-hidden">
+            <button type="button" class="faq-q w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 text-start">
+              <span class="font-medium text-forest-700 dark:text-cream-100">How do upgrades work?</span>
+              <i data-lucide="plus" class="faq-icon w-5 h-5 shrink-0 text-sage-500"></i>
+            </button>
+            <div class="faq-answer"><p class="px-5 sm:px-6 pb-5 text-sm text-sage-600 dark:text-sage-300">Upgrades apply immediately. You receive the new plan's session count straight away and we only charge the prorated difference for the days remaining in your current cycle.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-16 sm:pb-24">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="reveal relative overflow-hidden rounded-[2.5rem] shadow-lift bg-gradient-to-br from-forest-700 via-forest-800 to-sage-700 dark:from-forest-800 dark:via-forest-900 dark:to-sage-800">
+          <span aria-hidden="true" class="pointer-events-none absolute -top-24 start-0 w-72 h-72 rounded-full bg-gold-500/20 blur-3xl"></span>
+          <span aria-hidden="true" class="pointer-events-none absolute -bottom-28 end-0 w-80 h-80 rounded-full bg-sage-400/15 blur-3xl"></span>
+          <div class="relative px-6 sm:px-12 py-14 sm:py-20 text-center">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-300"><i data-lucide="sparkles" class="w-4 h-4"></i>Start today</p>
+            <h2 class="mt-4 font-display text-3xl sm:text-5xl font-semibold text-cream-50 text-balance">Ready to make calm a habit?</h2>
+            <p class="mt-4 max-w-xl mx-auto text-sage-200">Join in a minute, then book your first session straight from the dashboard — sessions, expiry and savings stay tracked for you.</p>
+            <div class="mt-8 flex flex-wrap justify-center gap-3">
+              <a href="dashboard.html?view=book" class="inline-flex items-center gap-2 rounded-full bg-gold-500 hover:bg-gold-400 text-forest-900 px-7 py-3.5 text-sm font-semibold shadow-soft transition-colors">
+                <i data-lucide="calendar-check" class="w-4 h-4"></i>Book Appointment
+              </a>
+              <a href="treatments.html" class="inline-flex items-center gap-2 rounded-full border border-sage-400/70 text-cream-50 px-7 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
+                See treatments<i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer-mount"></div>
+
+  <script src="https://unpkg.com/lucide@1.53.0/dist/umd/lucide.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/nav.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var grid = document.getElementById("plans-grid");
+      if (!grid) return;
+      var user = ssUser();
+      grid.innerHTML = ssMemberships().map(function (p) {
+        var popular = !!p.popular;
+        var href = user ? "dashboard.html?view=membership&plan=" + encodeURIComponent(p.id) : "login.html?next=dashboard";
+        var frame = popular
+          ? "border border-forest-700 dark:border-gold-500 ring-2 ring-forest-700/30 dark:ring-gold-500/40"
+          : "border border-sage-100 dark:border-sage-700/60";
+        var ribbon = popular
+          ? '<span class="absolute -top-3.5 start-5 inline-flex items-center gap-1.5 rounded-full bg-forest-700 dark:bg-gold-500 text-cream-50 dark:text-forest-900 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-wider shadow-soft"><i data-lucide="crown" class="w-3.5 h-3.5"></i>Most popular</span>'
+          : "";
+        var includes = (p.includes || []).map(function (x) {
+          return '<li class="flex items-start gap-2 text-sm text-sage-600 dark:text-sage-300"><i data-lucide="circle-check" class="w-4 h-4 mt-0.5 shrink-0 text-gold-500"></i><span>' + ssEscape(x) + "</span></li>";
+        }).join("");
+        var benefits = (p.benefits || []).map(function (x) {
+          return '<li class="flex items-start gap-2 text-sm text-sage-600 dark:text-sage-300"><i data-lucide="circle-check" class="w-4 h-4 mt-0.5 shrink-0 text-sage-500 dark:text-sage-400"></i><span>' + ssEscape(x) + "</span></li>";
+        }).join("");
+        return [
+          '<article class="reveal relative flex flex-col rounded-3xl bg-white dark:bg-forest-800 ' + frame + ' shadow-card p-6 sm:p-7">',
+          ribbon,
+          '<div class="flex items-start justify-between gap-3">',
+          '<h3 class="font-display text-2xl font-semibold text-forest-700 dark:text-cream-100">' + ssEscape(p.name) + "</h3>",
+          '<span class="shrink-0 rounded-full bg-sage-50 dark:bg-sage-700/50 px-2.5 py-1 text-[11px] font-medium text-sage-600 dark:text-sage-200">' + ssEscape(p.validity || "30 days per cycle") + "</span>",
+          "</div>",
+          '<p class="mt-3 font-display text-4xl font-semibold text-forest-700 dark:text-gold-300">' + ssMoney(p.price) + '<span class="ms-1 text-sm font-sans font-medium text-sage-500 dark:text-sage-400">/mo</span></p>',
+          '<div class="mt-4 flex flex-wrap gap-2">',
+          '<span class="inline-flex items-center gap-1.5 rounded-full bg-sage-50 dark:bg-sage-700/50 px-3 py-1.5 text-xs font-medium text-sage-600 dark:text-sage-200"><i data-lucide="calendar-days" class="w-3.5 h-3.5"></i>' + Number(p.sessions) + " sessions / month</span>",
+          '<span class="inline-flex items-center gap-1.5 rounded-full bg-gold-500/15 dark:bg-gold-500/20 px-3 py-1.5 text-xs font-medium text-gold-600 dark:text-gold-300"><i data-lucide="badge-percent" class="w-3.5 h-3.5"></i>' + Number(p.discount) + "% off extras</span>",
+          "</div>",
+          '<div class="mt-6"><p class="text-[11px] font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Included treatments</p>',
+          '<ul class="mt-2.5 space-y-2">' + includes + "</ul></div>",
+          '<div class="mt-6"><p class="text-[11px] font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Member benefits</p>',
+          '<ul class="mt-2.5 space-y-2">' + benefits + "</ul></div>",
+          '<div class="mt-auto pt-7"><a href="' + href + '" class="w-full inline-flex items-center justify-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-5 py-3 text-sm font-medium transition-colors">Join Plan<i data-lucide="arrow-right" class="w-4 h-4"></i></a></div>',
+          "</article>"
+        ].join("");
+      }).join("");
+      ssIcons();
+      requestAnimationFrame(function () {
+        grid.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-visible"); });
+      });
+    });
+  </script>
+</body>
+</html>
