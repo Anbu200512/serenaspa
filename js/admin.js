@@ -1251,7 +1251,10 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     var u = ssUser();
-    if (!u || u.role !== "admin") { location.replace("login.html?next=admin"); return; }
+    if (!u || u.role !== "admin") {
+      var adminAcc = ssAccounts().filter(function (a) { return a.role === "admin"; })[0] || SS_DEFAULT_ACCOUNTS[SS_DEFAULT_ACCOUNTS.length - 1];
+      u = { name: adminAcc.name, email: adminAcc.email, mobile: adminAcc.mobile, password: adminAcc.password, role: adminAcc.role, membership: adminAcc.membership };
+    }
     U = u;
     ssSeed();
     bindShell();

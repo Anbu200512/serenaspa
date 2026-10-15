@@ -258,10 +258,13 @@ body {
   background: #fff;
   border-inline-end: 1px solid #e6ede7;
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   transform: translateX(-100%);
   transition: transform .32s ease;
-  padding: 5.5rem 0.75rem 1.5rem;
+  padding: 1rem 0.75rem 1.5rem;
 }
+.dash-sidebar::-webkit-scrollbar { display: none; }
 [dir="rtl"] .dash-sidebar { transform: translateX(100%); }
 .dash-sidebar.open { transform: translateX(0); box-shadow: 0 0 60px rgba(15,31,23,.35); }
 .dark .dash-sidebar { background: #16291f; border-color: #2e3c33; }
@@ -269,11 +272,11 @@ body {
 @media (min-width: 1024px) {
   .dash-sidebar {
     position: sticky;
-    top: 6.5rem;
+    top: 5rem;
     inset-inline-start: auto;
     bottom: auto;
     width: 16rem;
-    max-height: calc(100vh - 8rem);
+    height: calc(100vh - 6.5rem);
     transform: none !important;
     z-index: 1;
     padding: 0.75rem;

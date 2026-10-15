@@ -26,11 +26,11 @@ function ssTreatmentCardHTML(t, opts) {
     <ul class="mt-3 flex flex-wrap gap-1.5">
       ${(t.benefits || []).slice(0, 3).map(b => `<li class="rounded-full bg-sage-50 dark:bg-sage-700/50 px-2.5 py-1 text-[11px] text-sage-600 dark:text-sage-200">${ssEscape(b)}</li>`).join("")}
     </ul>
-    <div class="mt-5 flex items-center gap-2 pt-1 mt-auto">
-      <button type="button" data-action="book-treatment" data-id="${t.id}" class="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-4 py-2.5 text-sm font-medium transition-colors">
+    <div class="mt-auto flex flex-wrap items-center gap-2 pt-1">
+      <button type="button" data-action="book-treatment" data-id="${t.id}" class="flex-1 min-w-[7rem] whitespace-nowrap inline-flex items-center justify-center gap-1.5 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-3 py-2.5 text-sm font-medium transition-colors">
         <i data-lucide="calendar-plus" class="w-4 h-4"></i>Book Now
       </button>
-      <button type="button" data-action="view-treatment" data-id="${t.id}" class="inline-flex items-center justify-center gap-1.5 rounded-full border border-sage-300 dark:border-sage-600 text-sage-700 dark:text-sage-200 hover:bg-sage-50 dark:hover:bg-sage-700/60 px-4 py-2.5 text-sm font-medium transition-colors">
+      <button type="button" data-action="view-treatment" data-id="${t.id}" class="flex-1 min-w-[7rem] whitespace-nowrap inline-flex items-center justify-center gap-1.5 rounded-full border border-sage-300 dark:border-sage-600 text-sage-700 dark:text-sage-200 hover:bg-sage-50 dark:hover:bg-sage-700/60 px-3 py-2.5 text-sm font-medium transition-colors">
         View Details
       </button>
     </div>
@@ -99,7 +99,7 @@ function ssOpenTreatmentModal(t) {
     .map(b => `<li class="flex items-start gap-2 text-sm text-sage-600 dark:text-sage-300"><i data-lucide="circle-check" class="w-4 h-4 mt-0.5 shrink-0 text-sage-500"></i><span>${ssEscape(b)}</span></li>`).join("");
   modal.querySelector("#tm-book").href = ssBookTreatmentHref(t.id);
   modal.querySelector("#tm-book").onclick = e => {
-    if (ssUser() && ssUser().role === "client") ssToast("Great choice â€” complete your booking in the dashboard.", "success");
+    if (ssUser() && ssUser().role === "client") ssToast("Great choice — complete your booking in the dashboard.", "success");
     ssCloseTreatmentModal();
   };
   modal.classList.remove("hidden");

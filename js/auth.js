@@ -95,7 +95,7 @@
 
     var forgotBtn = el("forgot-btn");
     if (forgotBtn) forgotBtn.addEventListener("click", function () {
-      ssToast("Demo mode — password resets are not actually sent. Use the demo buttons.", "info");
+      ssToast("Demo mode — password resets are not actually sent. Any credentials will sign you in.", "info");
     });
 
     form.addEventListener("submit", function (event) {
@@ -110,13 +110,20 @@
       }
 
       var account = findAccount(identifier);
-      if (!account) {
-        showError("login-error", "No account matches those details. Demo tip: use the buttons above.");
-        return;
-      }
-      if (String(account.password) !== password) {
-        showError("login-error", "That password is not correct. Demo tip: use the buttons above.");
-        return;
+      var session;
+      if (account) {
+        session = {
+          name: account.name,
+          email: account.email,
+          mobile: account.mobile,
+          role: account.role,
+          membership: account.membership || null
+        };
+      } else {
+        var email = /@/.test(identifier) ? identifier : "";
+        var digits = normalizeMobile(identifier.replace(/\D/g, ""));
+        var niceName = email ? email.split("@")[0].replace(/[._-]+/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); }) : "Guest";
+        session = { name: niceName, email: email || digits || identifier, mobile: digits, role: "client", membership: null };
       }
 
       var remember = el("login-remember");
@@ -125,13 +132,6 @@
         else localStorage.removeItem(REMEMBER_KEY);
       } catch (e) {}
 
-      var session = {
-        name: account.name,
-        email: account.email,
-        mobile: account.mobile,
-        role: account.role,
-        membership: account.membership || null
-      };
       ssSaveUser(session);
       window.location.href = loginRedirect(session);
     });
@@ -198,6 +198,20 @@
     });
   }
 
+  function bindSocial() {
+    var buttons = document.querySelectorAll("[data-social]");
+    if (!buttons.length) return;
+    Array.prototype.forEach.call(buttons, function (btn) {
+      btn.addEventListener("click", function () {
+        var provider = btn.getAttribute("data-social") || "social";
+        var label = provider.charAt(0).toUpperCase() + provider.slice(1);
+        ssSaveUser({ name: label + " User", email: "user@" + provider + ".demo", mobile: "", role: "client", membership: null });
+        ssToast("Signed in with " + label + ".", "success");
+        window.location.href = "dashboard.html";
+      });
+    });
+  }
+
   window.ssLogout = function () {
     try { localStorage.removeItem(SS_KEYS.user); } catch (e) {}
     try { localStorage.removeItem(REMEMBER_KEY); } catch (e) {}
@@ -207,6 +221,7 @@
   function init() {
     initLogin();
     initSignup();
+    bindSocial();
     ssIcons();
   }
 

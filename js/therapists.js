@@ -19,9 +19,9 @@ function ssTherapistCardHTML(t, opts) {
     ? "bg-white/10 text-sage-200"
     : "bg-sage-50 dark:bg-sage-700/50 text-sage-600 dark:text-sage-200";
   return `
-<article class="reveal group rounded-3xl overflow-hidden border ${cardCls} shadow-card card-hover">
-  <div class="relative h-60 overflow-hidden">
-    <img src="${t.image}" alt="${ssEscape(t.name)} â€” ${ssEscape(t.specialty)}" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+<article class="reveal group rounded-3xl overflow-hidden border ${cardCls} shadow-card card-hover flex flex-col">
+  <div class="relative h-60 shrink-0 overflow-hidden">
+    <img src="${t.image}" alt="${ssEscape(t.name)} — ${ssEscape(t.specialty)}" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
     <div class="absolute inset-0 bg-gradient-to-t from-forest-900/70 via-transparent to-transparent"></div>
     <span class="absolute top-3 start-3 inline-flex items-center gap-1 rounded-full bg-white/92 dark:bg-forest-900/85 px-2.5 py-1 text-[11px] font-medium text-forest-700 dark:text-gold-300">
       <i data-lucide="star" class="w-3 h-3 fill-gold-500 text-gold-500"></i>${Number(t.rating || 5).toFixed(1)}
@@ -31,7 +31,7 @@ function ssTherapistCardHTML(t, opts) {
       <p class="text-xs uppercase tracking-wider text-gold-300">${ssEscape(t.specialty)}</p>
     </div>
   </div>
-  <div class="p-5">
+  <div class="p-5 flex flex-col flex-1">
     <div class="flex items-center gap-3 text-xs ${bodyCls}">
       <span class="inline-flex items-center gap-1.5"><i data-lucide="briefcase" class="w-3.5 h-3.5"></i>${t.experience} yrs experience</span>
       <span class="inline-flex items-center gap-1.5"><i data-lucide="calendar-days" class="w-3.5 h-3.5"></i>${(t.days || []).length} days/week</span>
@@ -42,8 +42,9 @@ function ssTherapistCardHTML(t, opts) {
     </ul>
     <div class="mt-4 flex items-center gap-2 text-xs ${bodyCls}">
       <i data-lucide="calendar-check-2" class="w-4 h-4 text-sage-500"></i>
-      <span>${(t.days || []).join(" Â· ") || "By appointment"}</span>
+      <span>${(t.days || []).join(" · ") || "By appointment"}</span>
     </div>
+    <div class="mt-auto"></div>
     <button type="button" data-action="book-therapist" data-id="${t.id}" class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-4 py-2.5 text-sm font-medium transition-colors">
       <i data-lucide="calendar-plus" class="w-4 h-4"></i>Book with Therapist
     </button>

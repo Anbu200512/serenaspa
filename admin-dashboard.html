@@ -19,22 +19,69 @@
       } catch (e) {}
     })();
   </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="bg-cream-50 dark:bg-forest-900 text-forest-800 dark:text-sage-100 antialiased">
 
-  <div id="site-header-mount"></div>
+  <header class="sticky top-0 z-40 border-b border-sage-200/70 dark:border-sage-700/60 bg-cream-50/90 dark:bg-forest-900/90 backdrop-blur-md">
+    <div class="mx-auto max-w-[1500px] px-3 sm:px-6">
+      <div class="flex items-center gap-3 py-3">
+        <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+          <span class="grid place-items-center w-9 h-9 rounded-xl bg-forest-700 dark:bg-gold-500 text-cream-50 dark:text-forest-900 shadow-soft"><i data-lucide="leaf" class="w-5 h-5"></i></span>
+          <span class="font-display text-xl font-semibold text-forest-700 dark:text-cream-100">SereneSpa</span>
+        </a>
+        <div class="ms-auto flex items-center gap-2">
+          <div class="hidden lg:flex items-center gap-2">
+            <button type="button" id="dir-toggle" title="Switch text direction" aria-label="Switch text direction" class="grid place-items-center w-10 h-10 rounded-xl border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-700 transition-colors">
+              <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+            </button>
+            <button type="button" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode" class="grid place-items-center w-10 h-10 rounded-xl border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-700 transition-colors">
+              <i data-lucide="sun" class="w-4 h-4"></i>
+            </button>
+          </div>
+          <a href="index.html" class="hidden lg:inline-flex items-center gap-2 rounded-xl border border-sage-200 dark:border-sage-700 px-3.5 py-2.5 text-sm font-medium text-sage-600 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-700 transition-colors">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>Website
+          </a>
+          <button type="button" data-action="pay-record" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-4 sm:px-5 py-2.5 text-sm font-medium shadow-soft transition-colors">
+            <i data-lucide="circle-dollar-sign" class="w-4 h-4"></i><span class="hidden sm:inline">Record payment</span>
+          </button>
+          <button type="button" id="sidebar-open" aria-label="Open menu" aria-expanded="false" class="lg:hidden grid place-items-center w-10 h-10 shrink-0 rounded-xl border border-sage-200 dark:border-sage-700 bg-white dark:bg-forest-800 text-sage-600 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var dark = document.documentElement.classList.contains("dark");
+      ["theme-toggle", "theme-toggle-m"].forEach(function (id) {
+        var ic = document.querySelector("#" + id + " [data-lucide]");
+        if (ic) ic.setAttribute("data-lucide", dark ? "moon" : "sun");
+      });
+    });
+  </script>
 
-  <div class="mx-auto max-w-[1500px] px-3 sm:px-6 pt-24 sm:pt-28 pb-16">
+  <div class="mx-auto max-w-[1500px] px-3 sm:px-6 py-6 sm:py-8">
     <div class="flex gap-6 items-start">
 
-      <aside id="dash-sidebar" class="dash-sidebar lg:static">
+      <aside id="dash-sidebar" class="dash-sidebar flex flex-col">
         <div class="mb-4 flex items-center gap-3 rounded-2xl border border-sage-100 dark:border-sage-700/60 bg-sage-50 dark:bg-forest-800/70 p-3">
           <span id="dash-avatar" class="grid place-items-center w-11 h-11 shrink-0 rounded-full bg-forest-700 dark:bg-gold-500 text-cream-50 dark:text-forest-900 font-display text-lg font-semibold">SS</span>
           <div class="min-w-0">
             <p id="dash-username" class="truncate text-sm font-semibold text-forest-700 dark:text-cream-100">Admin</p>
             <span id="dash-plan" class="mt-0.5 inline-flex items-center rounded-full bg-white dark:bg-forest-900 px-2 py-0.5 text-[11px] font-medium text-sage-600 dark:text-sage-300">Administrator</span>
           </div>
+        </div>
+
+        <div class="mb-3 flex items-center gap-2 lg:hidden">
+          <button type="button" id="dir-toggle-m" title="Switch text direction" aria-label="Switch text direction" class="grid place-items-center w-10 h-10 rounded-xl border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-700 transition-colors">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+          </button>
+          <button type="button" id="theme-toggle-m" title="Toggle dark mode" aria-label="Toggle dark mode" class="grid place-items-center w-10 h-10 rounded-xl border border-sage-200 dark:border-sage-700 text-sage-600 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-700 transition-colors">
+            <i data-lucide="sun" class="w-4 h-4"></i>
+          </button>
         </div>
 
         <p class="px-3.5 pb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-sage-500 dark:text-sage-400">Menu</p>
@@ -52,7 +99,7 @@
           <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-sage-700 dark:text-sage-200 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors" data-view="settings"><i data-lucide="settings" class="w-4 h-4"></i><span>Settings</span><span class="sidebar-dot ms-auto w-1.5 h-1.5 rounded-full bg-gold-500 opacity-0"></span></button>
         </nav>
 
-        <div class="my-3 h-px bg-sage-200 dark:bg-sage-700"></div>
+        <div class="mt-auto mb-3 h-px bg-sage-200 dark:bg-sage-700"></div>
 
         <button type="button" class="sidebar-link w-full flex items-center gap-3 rounded-xl px-3.5 py-2.5 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors" data-view="logout"><i data-lucide="log-out" class="w-4 h-4"></i><span>Logout</span></button>
       </aside>
@@ -60,18 +107,13 @@
       <div class="flex-1 min-w-0">
 
         <div class="mb-5 sm:mb-6 flex flex-wrap items-center gap-3">
-          <button type="button" id="sidebar-open" aria-label="Open menu" aria-expanded="false" class="lg:hidden grid place-items-center w-10 h-10 shrink-0 rounded-xl border border-sage-200 dark:border-sage-700 bg-white dark:bg-forest-800 text-sage-600 dark:text-sage-300 hover:bg-sage-100 dark:hover:bg-sage-700/60 transition-colors">
-            <i data-lucide="menu" class="w-5 h-5"></i>
-          </button>
           <div class="min-w-0">
             <p id="dash-greeting" class="font-display text-2xl sm:text-3xl font-semibold text-forest-700 dark:text-cream-100">Admin panel</p>
             <p id="dash-date" class="text-xs sm:text-sm text-sage-500 dark:text-sage-400"></p>
           </div>
-          <div class="ms-auto flex items-center gap-2">
-            <button type="button" data-action="pay-record" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-4 sm:px-5 py-2.5 text-sm font-medium shadow-soft transition-colors">
-              <i data-lucide="circle-dollar-sign" class="w-4 h-4"></i><span class="hidden sm:inline">Record payment</span><span class="sm:hidden">Record</span>
-            </button>
-          </div>
+          <span class="ms-auto hidden sm:inline-flex items-center gap-2 rounded-full border border-sage-200 dark:border-sage-700 bg-white dark:bg-forest-800 px-4 py-2 text-xs font-medium text-sage-600 dark:text-sage-300">
+            <i data-lucide="activity" class="w-3.5 h-3.5"></i>All systems normal
+          </span>
         </div>
 
         <section id="view-overview" data-view="overview" class="dash-view">
@@ -651,8 +693,6 @@
   </div>
 
   <div id="dash-backdrop" class="fixed inset-0 z-[65] bg-forest-900/60 hidden lg:hidden"></div>
-
-  <div id="site-footer-mount"></div>
 
   <script src="https://unpkg.com/lucide@1.53.0/dist/umd/lucide.min.js"></script>
   <script src="js/main.js"></script>

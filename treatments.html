@@ -19,6 +19,7 @@
       } catch (e) {}
     })();
   </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="bg-cream-50 dark:bg-forest-900 text-forest-800 dark:text-sage-100 antialiased">
@@ -26,34 +27,34 @@
   <div id="site-header-mount"></div>
 
   <main>
-    <section class="hero-gradient pt-28 sm:pt-36 pb-12 sm:pb-16 overflow-hidden">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6">
-        <div class="max-w-3xl reveal">
-          <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="sparkles" class="w-4 h-4"></i>Treatment menu</p>
-          <h1 class="mt-3 font-display text-3xl sm:text-5xl font-semibold text-forest-700 dark:text-cream-100 text-balance">Our treatment menu</h1>
-          <p class="mt-4 max-w-2xl text-sage-600 dark:text-sage-300 leading-relaxed">
-            Eight therapist-led rituals — from slow Swedish strokes to warming hot stone work — each adapted to your pressure preference, your mood and the time you have. Filter, compare and book without leaving this page.
-          </p>
-          <nav aria-label="Breadcrumb" class="mt-6 flex flex-wrap items-center gap-2 text-sm text-sage-600 dark:text-sage-400">
-            <a href="index.html" class="inline-flex items-center gap-1.5 hover:text-forest-700 dark:hover:text-gold-300 transition-colors"><i data-lucide="home" class="w-3.5 h-3.5"></i>Home</a>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 flip-x" aria-hidden="true"></i>
-            <span class="font-medium text-forest-700 dark:text-cream-100" aria-current="page">Treatments</span>
-          </nav>
-          <div class="mt-7 flex flex-wrap items-center gap-3">
-            <a href="dashboard.html?view=book" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-7 py-3.5 text-sm font-medium shadow-soft transition-colors">
-              <i data-lucide="calendar-check" class="w-4 h-4"></i>Book Appointment
-            </a>
-            <a href="#menu" class="inline-flex items-center gap-2 rounded-full border border-sage-300 dark:border-sage-600 px-7 py-3.5 text-sm font-medium text-forest-700 dark:text-sage-100 hover:bg-white dark:hover:bg-forest-800 transition-colors">
-              Browse the menu<i data-lucide="arrow-down" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
+    <section class="hero-gradient relative pt-24 sm:pt-28 pb-10 sm:pb-14 overflow-hidden">
+      <div class="absolute inset-0 bg-cover bg-center" style="background-image:url('https://images.pexels.com/photos/31234756/pexels-photo-31234756.jpeg?auto=compress&cs=tinysrgb&w=1920')" aria-hidden="true"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-cream-50 via-cream-50/92 to-cream-50/55 dark:from-forest-900 dark:via-forest-900/92 dark:to-forest-900/55" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -top-24 -start-24 h-72 w-72 rounded-full bg-sage-300/40 blur-3xl dark:bg-sage-600/20" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute top-32 -end-20 h-80 w-80 rounded-full bg-gold-400/25 blur-3xl" aria-hidden="true"></div>
 
-        <div class="relative mt-10 reveal rounded-[2.5rem] overflow-hidden shadow-lift border border-white/60 dark:border-sage-700/60">
-          <img src="https://images.pexels.com/photos/6628701/pexels-photo-6628701.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Hands massaging a person's back during a relaxing spa treatment" class="w-full h-56 sm:h-80 object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-forest-900/75 via-forest-900/20 to-transparent"></div>
-          <div class="absolute inset-x-0 bottom-0 p-5 sm:p-8">
-            <p class="inline-flex items-center gap-2 rounded-full bg-white/90 dark:bg-forest-900/85 px-4 py-1.5 text-xs font-medium text-forest-700 dark:text-gold-300"><i data-lucide="clock-3" class="w-3.5 h-3.5"></i>45–90 minutes · pressure tailored every visit</p>
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+        <div class="max-w-3xl">
+          <div class="reveal">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.22em] uppercase text-gold-600 dark:text-gold-300"><i data-lucide="sparkles" class="w-4 h-4"></i>Treatment menu</p>
+            <h1 class="mt-3 font-display text-4xl sm:text-6xl font-semibold text-forest-700 dark:text-cream-100 text-balance">Our treatment <span class="italic text-gold-600 dark:text-gold-300">menu</span></h1>
+            <p class="mt-4 max-w-xl text-sage-600 dark:text-sage-300 leading-relaxed">
+              Eight therapist-led rituals — from slow Swedish strokes to warming hot stone work — each adapted to your pressure preference, your mood and the time you have. Filter, compare and book without leaving this page.
+            </p>
+            <nav aria-label="Breadcrumb" class="mt-6 flex flex-wrap items-center gap-2 text-sm text-sage-600 dark:text-sage-400">
+              <a href="index.html" class="inline-flex items-center gap-1.5 hover:text-forest-700 dark:hover:text-gold-300 transition-colors"><i data-lucide="home" class="w-3.5 h-3.5"></i>Home</a>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 flip-x" aria-hidden="true"></i>
+              <span class="font-medium text-forest-700 dark:text-cream-100" aria-current="page">Treatments</span>
+            </nav>
+            <div class="mt-7 flex flex-wrap items-center gap-3">
+              <a href="dashboard.html?view=book" class="inline-flex items-center gap-2 rounded-full bg-forest-700 hover:bg-forest-600 dark:bg-gold-500 dark:hover:bg-gold-400 dark:text-forest-900 text-cream-50 px-7 py-3.5 text-sm font-medium shadow-soft transition-colors">
+                <i data-lucide="calendar-check" class="w-4 h-4"></i>Book Appointment
+              </a>
+              <a href="#menu" class="inline-flex items-center gap-2 rounded-full border border-sage-300 dark:border-sage-600 px-7 py-3.5 text-sm font-medium text-forest-700 dark:text-sage-100 hover:bg-white dark:hover:bg-forest-800 transition-colors">
+                Browse the menu<i data-lucide="arrow-down" class="w-4 h-4"></i>
+              </a>
+            </div>
+
           </div>
         </div>
       </div>

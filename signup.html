@@ -19,14 +19,29 @@
       } catch (e) {}
     })();
   </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="bg-cream-50 dark:bg-forest-900 text-forest-800 dark:text-sage-100 antialiased">
 
-  <div id="site-header-mount"></div>
+  <div class="fixed top-4 end-4 z-50 flex items-center gap-2">
+    <button type="button" id="dir-toggle" title="Switch text direction" aria-label="Switch text direction" class="grid place-items-center w-10 h-10 rounded-xl border border-sage-200 dark:border-sage-700 bg-white/85 dark:bg-forest-800/85 backdrop-blur text-sage-600 dark:text-sage-300 shadow-soft transition-colors hover:bg-sage-100 dark:hover:bg-sage-700">
+      <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+    </button>
+    <button type="button" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode" class="grid place-items-center w-10 h-10 rounded-xl border border-sage-200 dark:border-sage-700 bg-white/85 dark:bg-forest-800/85 backdrop-blur text-sage-600 dark:text-sage-300 shadow-soft transition-colors hover:bg-sage-100 dark:hover:bg-sage-700">
+      <i data-lucide="sun" class="w-4 h-4"></i>
+    </button>
+  </div>
+  <script>
+    (function () {
+      var dark = document.documentElement.classList.contains("dark");
+      var ic = document.querySelector("#theme-toggle [data-lucide]");
+      if (ic) ic.setAttribute("data-lucide", dark ? "moon" : "sun");
+    })();
+  </script>
 
   <main>
-    <section class="hero-gradient pt-28 sm:pt-36 pb-16 sm:pb-24">
+    <section class="hero-gradient pt-16 sm:pt-24 pb-16 sm:pb-24">
       <div class="mx-auto max-w-6xl px-4 sm:px-6">
         <div class="reveal grid overflow-hidden rounded-[2rem] border border-sage-100 bg-white shadow-lift dark:border-sage-700/60 dark:bg-forest-800 lg:grid-cols-2">
 
@@ -52,7 +67,6 @@
                   <div>
                     <label for="su-mobile" class="mb-1.5 block text-xs font-semibold uppercase tracking-wider text-sage-500 dark:text-sage-400">Mobile</label>
                     <input id="su-mobile" name="mobile" type="tel" required autocomplete="tel" inputmode="numeric" placeholder="10-digit number" class="w-full rounded-xl border border-sage-200 bg-white px-4 py-3 text-sm text-forest-800 placeholder:text-sage-400 focus:outline-none focus:ring-2 focus:ring-sage-400 dark:border-sage-600 dark:bg-forest-900 dark:text-sage-100" />
-                    <p class="mt-1 text-xs text-sage-500 dark:text-sage-400">Exactly 10 digits — a +91 prefix is welcome.</p>
                   </div>
                 </div>
 
@@ -96,9 +110,14 @@
             </div>
           </div>
 
-          <div class="relative hidden h-48 overflow-hidden bg-forest-900 sm:block sm:h-64 lg:h-auto">
+          <div class="relative order-first h-64 overflow-hidden bg-forest-900 sm:h-80 lg:order-last lg:h-auto">
             <img src="https://images.pexels.com/photos/6629608/pexels-photo-6629608.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Close-up of a relaxing back massage with spa oil" class="absolute inset-0 h-full w-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-forest-900/90 via-forest-900/45 to-forest-900/10"></div>
+            <div class="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-forest-900/60 to-transparent"></div>
+            <a href="index.html" class="absolute inset-x-0 top-0 flex items-center gap-2.5 p-5 sm:p-7 lg:p-9">
+              <span class="grid place-items-center w-9 h-9 shrink-0 rounded-xl bg-forest-700 dark:bg-gold-500 text-cream-50 dark:text-forest-900 shadow-soft"><i data-lucide="leaf" class="w-5 h-5"></i></span>
+              <span class="font-display text-xl font-semibold text-cream-50">SereneSpa</span>
+            </a>
             <blockquote class="absolute inset-x-0 bottom-0 p-5 sm:p-7 lg:p-9">
               <p class="font-display text-lg italic leading-snug text-cream-50 sm:text-2xl lg:text-3xl">The best time to book was this morning. The next best time is now.</p>
               <cite class="mt-2 block text-xs not-italic text-sage-300 sm:text-sm">Your first session awaits</cite>
@@ -109,8 +128,6 @@
       </div>
     </section>
   </main>
-
-  <div id="site-footer-mount"></div>
 
   <script src="https://unpkg.com/lucide@1.53.0/dist/umd/lucide.min.js"></script>
   <script src="js/main.js"></script>

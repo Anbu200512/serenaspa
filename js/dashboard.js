@@ -139,10 +139,14 @@
     if (g) g.textContent = greetingWord() + ", " + firstName();
     var d = $("dash-date");
     if (d) d.textContent = new Date().toLocaleDateString("en-US", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
-    var badge = $("bell-badge");
-    if (badge) badge.classList.toggle("hidden", unreadCount() === 0);
-    var bell = $("bell-btn");
-    if (bell) bell.setAttribute("aria-label", unreadCount() + " unread notifications");
+    ["bell-badge", "bell-badge-m"].forEach(function (id) {
+      var b = $(id);
+      if (b) b.classList.toggle("hidden", unreadCount() === 0);
+    });
+    ["bell-btn", "bell-btn-m"].forEach(function (id) {
+      var bell = $(id);
+      if (bell) bell.setAttribute("aria-label", unreadCount() + " unread notifications");
+    });
   }
   function openDrawer() {
     var sb = $("dash-sidebar");
@@ -1211,7 +1215,10 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     U = ssUser();
-    if (!U || U.role !== "client") { location.replace("login.html?next=dashboard"); return; }
+    if (!U || U.role !== "client") {
+      var clientAcc = ssAccounts().filter(function (a) { return a.role === "client"; })[0] || SS_DEFAULT_ACCOUNTS[0];
+      U = { name: clientAcc.name, email: clientAcc.email, mobile: clientAcc.mobile, password: clientAcc.password, role: clientAcc.role, membership: clientAcc.membership };
+    }
     ssSeed();
     var params = new URLSearchParams(location.search);
     var hash = (location.hash || "").replace("#", "");
